@@ -193,23 +193,29 @@ def main():
     
     # Use the hardcoded API key or environment variable
     api_key = os.getenv("CEREBRAS_API_KEY")
-    if not api_key:
-        print("⚠️ Using fallback responses - CEREBRAS_API_KEY not found", file=sys.stderr)
     
-    print("🚀 Starting user research simulation...", file=sys.stderr)
+    # Only show progress if running directly (not imported)
+    show_progress = __name__ == "__main__"
+    
+    if show_progress:
+        if not api_key:
+            print("⚠️ Using fallback responses - CEREBRAS_API_KEY not found", file=sys.stderr)
+        print("🚀 Starting user research simulation...", file=sys.stderr)
+        print(f"👥 Generating {num_interviews} personas...", file=sys.stderr)
     
     # Generate personas
-    print(f"👥 Generating {num_interviews} personas...", file=sys.stderr)
     personas = generate_personas(question, audience, num_interviews, api_key)
     
     # Generate interview questions  
-    print("❓ Creating interview questions...", file=sys.stderr)
+    if show_progress:
+        print("❓ Creating interview questions...", file=sys.stderr)
     questions = generate_interview_questions(question, 3, api_key)
     
     # Conduct interviews
     all_interviews = []
     for i, persona in enumerate(personas[:num_interviews]):
-        print(f"🎤 Interviewing {persona.get('name', f'Participant {i+1}')}...", file=sys.stderr)
+        if show_progress:
+            print(f"🎤 Interviewing {persona.get('name', f'Participant {i+1}')}...", file=sys.stderr)
         responses = simulate_interview(persona, questions, question, api_key)
         all_interviews.append({
             "persona_name": persona.get('name', f'Participant {i+1}'),
@@ -217,7 +223,8 @@ def main():
         })
     
     # Synthesize insights
-    print("🔍 Analyzing results...", file=sys.stderr)
+    if show_progress:
+        print("🔍 Analyzing results...", file=sys.stderr)
     insights = synthesize_insights(all_interviews, question, api_key)
     
     # Prepare participant data for the dashboard table
@@ -240,7 +247,8 @@ def main():
     
     # Output results as JSON
     print(json.dumps(result, indent=2))
-    print("✅ Research simulation complete", file=sys.stderr)
+    if show_progress:
+        print("✅ Research simulation complete", file=sys.stderr)
 
 if __name__ == "__main__":
     main()
