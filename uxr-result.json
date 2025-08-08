@@ -1,0 +1,47 @@
+{
+  "keyInsights": "Users showed varied reactions to the research question: How would users feel about an iphone with donald trump's face on it",
+  "observations": "Participants expressed both concerns and interest based on their backgrounds",
+  "takeaways": "Consider user diversity when implementing changes related to How would users feel about an iphone with donald trump's face on it",
+  "participants": [
+    {
+      "id": 1,
+      "header": "Alex Chen",
+      "type": "Gen Z",
+      "status": "creative, social",
+      "target": "20",
+      "limit": "Student"
+    },
+    {
+      "id": 2,
+      "header": "Jordan Smith",
+      "type": "Gen Z",
+      "status": "analytical, curious",
+      "target": "22",
+      "limit": "Designer"
+    },
+    {
+      "id": 3,
+      "header": "Taylor Davis",
+      "type": "Gen Z",
+      "status": "outgoing, practical",
+      "target": "24",
+      "limit": "Barista"
+    },
+    {
+      "id": 4,
+      "header": "Morgan Lee",
+      "type": "Gen Z",
+      "status": "logical, tech-savvy",
+      "target": "26",
+      "limit": "Developer"
+    },
+    {
+      "id": 5,
+      "header": "Casey Brown",
+      "type": "Gen Z",
+      "status": "expressive, confident",
+      "target": "28",
+      "limit": "Influencer"
+    }
+  ]
+}

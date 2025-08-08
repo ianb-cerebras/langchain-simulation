@@ -1,0 +1,6 @@
+langchain>=0.2.0
+langgraph>=0.0.37
+langchain-openai>=0.1.5
+langchain_cerebras>=0.0.2
+pydantic>=1.10
+ipython>=8.0

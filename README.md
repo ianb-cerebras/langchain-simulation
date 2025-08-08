@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User Research Simulation Platform
+
+An AI-powered web application that simulates user research studies using Next.js and the Cerebras AI API. Generate realistic personas, conduct simulated interviews, and synthesize insights for product research.
+
+## Features
+
+- **AI-Powered Research**: Uses Cerebras AI to generate diverse user personas and simulate realistic interviews
+- **Interactive Dashboard**: View key insights, observations, and takeaways from research simulations
+- **Participant Management**: Browse simulated participants with detailed demographics and personality traits
+- **Modern UI**: Built with Next.js, TypeScript, and Shadcn UI components with dark mode support
+- **Real-time Results**: Dynamic dashboard that updates with simulation results
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- Python 3.8+
+- Cerebras API key (optional - app works with fallback data)
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd simulation-webapp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install Node.js dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Install Python dependencies:
+```bash
+python3 -m pip install -r requirements.txt
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up environment variables (optional):
+```bash
+# Create .env.local file
+CEREBRAS_API_KEY=your_cerebras_api_key
+```
 
-## Learn More
+### Running the Application
 
-To learn more about Next.js, take a look at the following resources:
+1. Start the development server:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Navigate to `/config` to start a simulation
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running a Simulation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Configure Research**: Go to `/config` and enter:
+   - Research question (e.g., "How would users feel about a pink iPhone?")
+   - Target audience (e.g., "Gen Z")
+   - Number of interviews (1-50)
+
+2. **Run Simulation**: Click "Run Simulation" to start the AI-powered research
+
+3. **View Results**: Automatically redirected to `/dashboard` to see:
+   - Key insights and observations
+   - Simulated participant data
+   - Interactive charts and visualizations
+
+### Dashboard Features
+
+- **Section Cards**: Display key insights, observations, and takeaways
+- **Participant Table**: Browse simulated participants with clickable rows for detailed information
+- **Interactive Charts**: Visualize research data and trends
+- **Dark Mode**: Toggle between light and dark themes
+
+## Technical Architecture
+
+### Frontend
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **UI Components**: Shadcn UI with Radix UI primitives
+- **Styling**: Tailwind CSS
+- **State Management**: React hooks (useState, useEffect)
+
+### Backend
+- **API Routes**: Next.js API routes for serverless functions
+- **Python Integration**: Child process spawning for AI script execution
+- **Data Storage**: Local JSON files for configuration and results
+
+### AI Engine
+- **Language Model**: Cerebras AI API (llama3.1-8b)
+- **Script**: Python-based research simulation engine
+- **Features**: Persona generation, interview simulation, insight synthesis
+
+## File Structure
+
+```
+simulation-webapp/
+├── app/
+│   ├── api/
+│   │   ├── run-uxr/route.ts    # Execute Python simulation
+│   │   └── uxr-result/route.ts # Serve simulation results
+│   ├── config/page.tsx          # Configuration interface
+│   ├── dashboard/page.tsx       # Results dashboard
+│   └── layout.tsx               # Root layout with theme provider
+├── components/
+│   ├── data-table.tsx           # Interactive participant table
+│   ├── section-cards.tsx        # Insight display cards
+│   └── theme-toggle.tsx         # Dark mode toggle
+├── enhanced_uxr.py              # Main AI research engine
+├── requirements.txt              # Python dependencies
+└── package.json                 # Node.js dependencies
+```
+
+## API Endpoints
+
+- `POST /api/run-uxr`: Execute research simulation
+- `GET /api/uxr-result`: Retrieve latest simulation results
+
+## Configuration
+
+The application can run with or without a Cerebras API key:
+
+- **With API Key**: Full AI-powered simulations with realistic personas and responses
+- **Without API Key**: Uses fallback data for demonstration purposes
+
+## Development
+
+### Adding New Features
+
+1. **UI Components**: Add new Shadcn UI components in `components/`
+2. **API Routes**: Create new routes in `app/api/`
+3. **Python Logic**: Extend `enhanced_uxr.py` for additional research capabilities
+
+### Customizing the AI Engine
+
+The Python script (`enhanced_uxr.py`) can be modified to:
+- Add new persona generation strategies
+- Implement different interview question types
+- Enhance insight synthesis algorithms
+- Integrate with other AI providers
+
+## Deployment
+
+This is a Next.js application that can be deployed to:
+- Vercel (recommended)
+- Netlify
+- Any Node.js hosting platform
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+[Add your license here]
+
+---
+
+Built with Next.js, TypeScript, and Cerebras AI
