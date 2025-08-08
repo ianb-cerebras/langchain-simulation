@@ -141,26 +141,10 @@ The Python script (`enhanced_uxr.py`) can be modified to:
 - Add new persona generation strategies
 - Implement different interview question types
 - Enhance insight synthesis algorithms
-- Integrate with other AI providers
 
 ## Deployment
 
-This is a Next.js application that can be deployed to:
-- Vercel (recommended)
-- Netlify
-- Any Node.js hosting platform
+This is a Next.js application that can be deployed to Vercel
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-[Add your license here]
-
----
 
 Built with Next.js, TypeScript, and Cerebras AI
