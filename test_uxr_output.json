@@ -1,0 +1,97 @@
+{
+  "research_question": "How do users interact with AI assistants?",
+  "target_demographic": "Software developers aged 25-40",
+  "timestamp": "2025-08-08T23:35:59.418176",
+  "num_interviews": 2,
+  "num_questions": 3,
+  "interview_questions": [
+    "How often do you use AI assistants?",
+    "What tasks do you use them for?",
+    "What improvements would you like to see?"
+  ],
+  "personas": [
+    {
+      "name": "Alice Johnson",
+      "age": 28,
+      "job": "Frontend Developer",
+      "traits": [
+        "detail-oriented",
+        "creative",
+        "patient"
+      ],
+      "communication_style": "Direct and technical",
+      "background": "5 years in web development"
+    },
+    {
+      "name": "Bob Smith",
+      "age": 35,
+      "job": "Backend Engineer",
+      "traits": [
+        "analytical",
+        "pragmatic",
+        "focused"
+      ],
+      "communication_style": "Concise and logical",
+      "background": "10 years in enterprise software"
+    }
+  ],
+  "all_interviews": [
+    {
+      "persona": {
+        "name": "Alice Johnson",
+        "age": 28,
+        "job": "Frontend Developer",
+        "traits": [
+          "detail-oriented",
+          "creative",
+          "patient"
+        ],
+        "communication_style": "Direct and technical",
+        "background": "5 years in web development"
+      },
+      "responses": [
+        {
+          "question": "How often do you use AI assistants?",
+          "answer": "Daily for code reviews and debugging"
+        },
+        {
+          "question": "What tasks do you use them for?",
+          "answer": "Mainly for explaining complex code and generating boilerplate"
+        },
+        {
+          "question": "What improvements would you like to see?",
+          "answer": "Better understanding of project context"
+        }
+      ]
+    },
+    {
+      "persona": {
+        "name": "Bob Smith",
+        "age": 35,
+        "job": "Backend Engineer",
+        "traits": [
+          "analytical",
+          "pragmatic",
+          "focused"
+        ],
+        "communication_style": "Concise and logical",
+        "background": "10 years in enterprise software"
+      },
+      "responses": [
+        {
+          "question": "How often do you use AI assistants?",
+          "answer": "Several times a week"
+        },
+        {
+          "question": "What tasks do you use them for?",
+          "answer": "Architecture decisions and performance optimization"
+        },
+        {
+          "question": "What improvements would you like to see?",
+          "answer": "More accurate technical recommendations"
+        }
+      ]
+    }
+  ],
+  "synthesis": "Key findings: Developers use AI assistants regularly for code-related tasks..."
+}

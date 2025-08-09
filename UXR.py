@@ -29,6 +29,8 @@ import sys
 from typing import Dict, List, TypedDict
 import time
 import os
+import json
+from datetime import datetime
 from IPython.display import Image, display
 
 from langchain_cerebras import ChatCerebras
@@ -41,12 +43,9 @@ DEFAULT_NUM_INTERVIEWS = 10
 DEFAULT_NUM_QUESTIONS = 5
 
 os.environ["CEREBRAS_API_KEY"]="REMOVED"
+os.environ["LANGCHAIN_TRACING_V2"] = "false"  # Disable LangSmith tracing
 
 import os, getpass
-
-os.environ["LANGSMITH_TRACING"] = "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"  # Your Langsmith api key if you want to enable tracing
-os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_PROJECT"] = "langchain-cerebras"
 
 """# Step #2: Setting up our LLM
 These functions sends prompts to llama3.3-70b running on Cerebras and returns clean, direct responses. It will serve as our core communication layer throughout the research process - from generating interview questions to creating participant personas to analyzing simulated responses.
@@ -385,6 +384,38 @@ The workflow automatically handles the complex orchestration between configurati
 
 """
 
+def save_research_results(state: Dict, filename: str = None) -> str:
+    """Save research results to JSON file"""
+    if filename is None:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"uxr_results_{timestamp}.json"
+    
+    # Convert Pydantic models to dictionaries
+    serializable_state = {
+        "research_question": state.get("research_question", ""),
+        "target_demographic": state.get("target_demographic", ""),
+        "timestamp": datetime.now().isoformat(),
+        "num_interviews": state.get("num_interviews", 0),
+        "num_questions": state.get("num_questions", 0),
+        "interview_questions": state.get("interview_questions", []),
+        "personas": [p.model_dump() if hasattr(p, 'model_dump') else p for p in state.get("personas", [])],
+        "all_interviews": [
+            {
+                "persona": interview["persona"].model_dump() if hasattr(interview["persona"], 'model_dump') else interview["persona"],
+                "responses": interview["responses"]
+            }
+            for interview in state.get("all_interviews", [])
+        ],
+        "synthesis": state.get("synthesis", "")
+    }
+    
+    # Save to JSON file
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(serializable_state, f, indent=2, ensure_ascii=False)
+    
+    print(f"\n💾 Results saved to: {filename}")
+    return filename
+
 def run_research_system():
     """Execute the complete LangGraph research workflow"""
 
@@ -417,6 +448,10 @@ def run_research_system():
         final_state = workflow.invoke(initial_state, {"recursion_limit": 100})
         total_time = time.time() - start_time
         print(f"\n✅ Workflow complete! {len(final_state['all_interviews'])} interviews in {total_time:.1f}s")
+        
+        # Save results to JSON
+        save_research_results(final_state)
+        
         return final_state
     except Exception as e:
         print(f"❌ Error during workflow execution: {e}")
@@ -424,31 +459,14 @@ def run_research_system():
         
 
 print("✅ Complete LangGraph system ready")
-result = run_research_system()
 
-# Optional: Follow Up Question
-If you'd like to add a little bit more complexity, we can change our router and create a system for each persona to be asked one follow up question based on their previous answers.
-"""
-
-followup_question_prompt = """
-Generate ONE natural follow‑up question for {persona_name} based on their last answer:
-"{previous_answer}"
-Keep it conversational and dig a bit deeper.
-"""
-
-followup_answer_prompt = """
-You are {persona_name}, a {persona_age}-year-old {persona_job} who is {persona_traits}.
-
-Answer the follow‑up question below in 2‑4 sentences, staying authentic and specific.
-
-Follow‑up question: {followup_question}
-
-Answer as {persona_name}:
-"""
+# Only run if this is the main script
+if __name__ == "__main__":
+    result = run_research_system()
 
 # ── main node ────────────────────────────────────────────────────────────────
 def interview_node(state: InterviewState) -> Dict:
-    """Conduct interview with current persona (adds a single follow‑up)."""
+    """Conduct interview with current persona."""
 
     persona  = state['personas'][state['current_persona_index']]
     question = state['interview_questions'][state['current_question_index']]
@@ -476,34 +494,6 @@ def interview_node(state: InterviewState) -> Dict:
 
     # ---------- if that was the last main question ----------
     if state['current_question_index'] + 1 >= len(state['interview_questions']):
-
-        # ----- add ONE follow‑up (only if not done already) -----
-        if not any(entry.get("is_followup") for entry in history):
-            followup_q = ask_ai(
-                followup_question_prompt.format(
-                    persona_name    = persona.name,
-                    previous_answer = answer
-                )
-            )
-            print(f"🔄 Follow‑up: {followup_q}")
-
-            followup_ans = ask_ai(
-                followup_answer_prompt.format(
-                    persona_name      = persona.name,
-                    persona_age       = persona.age,
-                    persona_job       = persona.job,
-                    persona_traits    = persona.traits,
-                    followup_question = followup_q
-                )
-            )
-            print(f"A: {followup_ans}")
-
-            history.append({
-                "question"   : followup_q,
-                "answer"     : followup_ans,
-                "is_followup": True
-            })
-
         # save interview & advance to next persona
         return {
             "all_interviews"         : state['all_interviews'] + [{

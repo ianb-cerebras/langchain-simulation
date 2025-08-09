@@ -108,6 +108,14 @@ export const schema = z.object({
   status: z.string(),
   target: z.string(),
   limit: z.string(),
+  interview: z.object({
+    persona: z.any(),
+    responses: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+      is_followup: z.boolean().optional()
+    }))
+  }).optional()
 })
 
 // Create a separate component for the drag handle
@@ -520,6 +528,7 @@ const chartConfig = {
 
 function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
   const isMobile = useIsMobile()
+  const hasInterview = item.interview && item.interview.responses && item.interview.responses.length > 0
 
   return (
     <Drawer direction={isMobile ? "bottom" : "right"}>
@@ -532,131 +541,132 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
         <DrawerHeader className="gap-1">
           <DrawerTitle>{item.header}</DrawerTitle>
           <DrawerDescription>
-            Showing total visitors for the last 6 months
+            {hasInterview ? `${item.interview?.responses?.length || 0} interview questions` : "Participant details"}
           </DrawerDescription>
         </DrawerHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm">
-          {!isMobile && (
+        <div className="flex flex-col gap-4 overflow-y-auto px-4 text-sm" style={{ maxHeight: '70vh' }}>
+          {hasInterview ? (
             <>
-              <ChartContainer config={chartConfig}>
-                <AreaChart
-                  accessibilityLayer
-                  data={chartData}
-                  margin={{
-                    left: 0,
-                    right: 10,
-                  }}
-                >
-                  <CartesianGrid vertical={false} />
-                  <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    axisLine={false}
-                    tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                    hide
-                  />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent indicator="dot" />}
-                  />
-                  <Area
-                    dataKey="mobile"
-                    type="natural"
-                    fill="var(--color-mobile)"
-                    fillOpacity={0.6}
-                    stroke="var(--color-mobile)"
-                    stackId="a"
-                  />
-                  <Area
-                    dataKey="desktop"
-                    type="natural"
-                    fill="var(--color-desktop)"
-                    fillOpacity={0.4}
-                    stroke="var(--color-desktop)"
-                    stackId="a"
-                  />
-                </AreaChart>
-              </ChartContainer>
-              <Separator />
-              <div className="grid gap-2">
-                <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month{" "}
-                  <IconTrendingUp className="size-4" />
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-base">Participant Profile</h3>
+                  <div className="grid gap-2 text-sm">
+                    <div><span className="text-muted-foreground">Age:</span> {item.target}</div>
+                    <div><span className="text-muted-foreground">Occupation:</span> {item.limit}</div>
+                    <div><span className="text-muted-foreground">Traits:</span> {item.status}</div>
+                  </div>
                 </div>
-                <div className="text-muted-foreground">
-                  Showing total visitors for the last 6 months. This is just
-                  some random text to test the layout. It spans multiple lines
-                  and should wrap around.
+                <Separator />
+                <div className="space-y-4">
+                  <h3 className="font-semibold text-base">Interview Responses</h3>
+                  {item.interview?.responses?.map((qa, index) => (
+                    <div key={index} className="space-y-2 pb-4 border-b last:border-0">
+                      <div className="flex items-start gap-2">
+                        <Badge variant={qa.is_followup ? "secondary" : "default"} className="mt-0.5">
+                          {qa.is_followup ? "Follow-up" : `Q${index + 1}`}
+                        </Badge>
+                        <div className="flex-1 space-y-2">
+                          <p className="font-medium">{qa.question}</p>
+                          <p className="text-muted-foreground">{qa.answer}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <Separator />
             </>
+          ) : (
+            !isMobile && (
+              <>
+                <ChartContainer config={chartConfig}>
+                  <AreaChart
+                    accessibilityLayer
+                    data={chartData}
+                    margin={{
+                      left: 0,
+                      right: 10,
+                    }}
+                  >
+                    <CartesianGrid vertical={false} />
+                    <XAxis
+                      dataKey="month"
+                      tickLine={false}
+                      axisLine={false}
+                      tickMargin={8}
+                      tickFormatter={(value) => value.slice(0, 3)}
+                      hide
+                    />
+                    <ChartTooltip
+                      cursor={false}
+                      content={<ChartTooltipContent indicator="dot" />}
+                    />
+                    <Area
+                      dataKey="mobile"
+                      type="natural"
+                      fill="var(--color-mobile)"
+                      fillOpacity={0.6}
+                      stroke="var(--color-mobile)"
+                      stackId="a"
+                    />
+                    <Area
+                      dataKey="desktop"
+                      type="natural"
+                      fill="var(--color-desktop)"
+                      fillOpacity={0.4}
+                      stroke="var(--color-desktop)"
+                      stackId="a"
+                    />
+                  </AreaChart>
+                </ChartContainer>
+                <Separator />
+                <div className="grid gap-2">
+                  <div className="flex gap-2 leading-none font-medium">
+                    Trending up by 5.2% this month{" "}
+                    <IconTrendingUp className="size-4" />
+                  </div>
+                  <div className="text-muted-foreground">
+                    Showing total visitors for the last 6 months. This is just
+                    some random text to test the layout. It spans multiple lines
+                    and should wrap around.
+                  </div>
+                </div>
+                <Separator />
+              </>
+            )
           )}
-          <form className="flex flex-col gap-4">
-            <div className="flex flex-col gap-3">
-              <Label htmlFor="header">Header</Label>
-              <Input id="header" defaultValue={item.header} />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
+          {!hasInterview && (
+            <form className="flex flex-col gap-4">
               <div className="flex flex-col gap-3">
-                <Label htmlFor="type">Type</Label>
-                <Select defaultValue={item.type}>
-                  <SelectTrigger id="type" className="w-full">
-                    <SelectValue placeholder="Select a type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Table of Contents">
-                      Table of Contents
-                    </SelectItem>
-                    <SelectItem value="Executive Summary">
-                      Executive Summary
-                    </SelectItem>
-                    <SelectItem value="Technical Approach">
-                      Technical Approach
-                    </SelectItem>
-                    <SelectItem value="Design">Design</SelectItem>
-                    <SelectItem value="Capabilities">Capabilities</SelectItem>
-                    <SelectItem value="Focus Documents">
-                      Focus Documents
-                    </SelectItem>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Cover Page">Cover Page</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Label htmlFor="header">Name</Label>
+                <Input id="header" defaultValue={item.header} />
               </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="status">Status</Label>
-                <Select defaultValue={item.status}>
-                  <SelectTrigger id="status" className="w-full">
-                    <SelectValue placeholder="Select a status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Done">Done</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Not Started">Not Started</SelectItem>
-                  </SelectContent>
-                </Select>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-3">
+                  <Label htmlFor="type">Demographic</Label>
+                  <Input id="type" defaultValue={item.type} />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Label htmlFor="status">Personality</Label>
+                  <Input id="status" defaultValue={item.status} />
+                </div>
               </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="target">Target</Label>
-                <Input id="target" defaultValue={item.target} />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-3">
+                  <Label htmlFor="target">Age</Label>
+                  <Input id="target" defaultValue={item.target} />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <Label htmlFor="limit">Occupation</Label>
+                  <Input id="limit" defaultValue={item.limit} />
+                </div>
               </div>
-              <div className="flex flex-col gap-3">
-                <Label htmlFor="limit">Limit</Label>
-                <Input id="limit" defaultValue={item.limit} />
-              </div>
-            </div>
-
-          </form>
+            </form>
+          )}
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
-          </DrawerClose>
+            <Button variant="default">Close</Button>
+A          </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

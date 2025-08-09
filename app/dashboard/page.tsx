@@ -17,6 +17,22 @@ interface InsightResult {
     status: string;
     target: string;
     limit: string;
+    interview?: {
+      persona: any;
+      responses: Array<{
+        question: string;
+        answer: string;
+        is_followup?: boolean;
+      }>;
+    };
+  }>;
+  all_interviews?: Array<{
+    persona: any;
+    responses: Array<{
+      question: string;
+      answer: string;
+      is_followup?: boolean;
+    }>;
   }>;
 }
 
