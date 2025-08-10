@@ -311,6 +311,11 @@ export function DataTable({
   data: z.infer<typeof schema>[]
 }) {
   const [data, setData] = React.useState(() => initialData)
+  
+  // Update internal state when prop changes (enables dynamic updates from simulation data)
+  React.useEffect(() => {
+    setData(initialData)
+  }, [initialData])
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
@@ -666,7 +671,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
         <DrawerFooter>
           <DrawerClose asChild>
             <Button variant="default">Close</Button>
-A          </DrawerClose>
+          </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
