@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import Dict, List, TypedDict, Optional
 
 from pydantic import BaseModel, Field, ValidationError
+import json
 
 from langchain_cerebras import ChatCerebras
 from langchain_core.messages import HumanMessage
@@ -126,7 +127,7 @@ def configuration_node(state: InterviewState) -> Dict:
 persona_prompt = (
     "Generate exactly {num_personas} unique personas for an interview. "
     "Each should belong to the target demographic: {demographic}. "
-    "Respond only in JSON using this format: { personas: [ ... ] }"
+    "Respond only in JSON using this exact format: {\"personas\": [ ... ] }"
 )
 
 
@@ -156,7 +157,27 @@ def persona_generation_node(state: InterviewState) -> Dict:
             if raw_output is None:
                 raise ValueError("LLM returned None")
 
-            validated = PersonasList.model_validate(raw_output)
+            # Normalize possible formatting issues from the model
+            normalized_output = raw_output
+            # If model returned JSON string, parse it
+            if isinstance(normalized_output, str):
+                try:
+                    normalized_output = json.loads(normalized_output)
+                except Exception:
+                    pass
+            # If dict-like, strip whitespace and normalize key casing
+            if isinstance(normalized_output, dict):
+                # Strip spaces around keys
+                normalized_keys = {str(k).strip(): v for k, v in normalized_output.items()}
+                # Handle capitalization variations
+                lower_map = {str(k).strip().lower(): k for k in normalized_keys.keys()}
+                if "personas" not in normalized_keys:
+                    if "personas" in lower_map:
+                        original_key = lower_map["personas"]
+                        normalized_keys["personas"] = normalized_keys.pop(original_key)
+                normalized_output = normalized_keys
+
+            validated = PersonasList.model_validate(normalized_output)
 
             if len(validated.personas) != num_personas:
                 raise ValueError(
