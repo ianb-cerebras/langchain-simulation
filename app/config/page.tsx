@@ -78,9 +78,9 @@ export default function ConfigPage() {
           <CardTitle className="text-xl">Simulation Configuration</CardTitle>
           <CardDescription>Enter the details of your simulation</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="flex flex-col gap-6">
           {/* Cerebras API Key */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <label className="block text-sm font-medium" htmlFor="cerebras-api-key">
               Cerebras API Key
             </label>
@@ -90,11 +90,14 @@ export default function ConfigPage() {
               placeholder="sk_cerebras_..."
               value={cerebrasApiKey}
               onChange={(e) => setCerebrasApiKey(e.target.value)}
+              autoComplete="off"
+              name="cerebras-api-key"
+              className="bg-white dark:bg-input/30"
             />
           </div>
 
           {/* API Key */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <label className="block text-sm font-medium" htmlFor="api-key">
               What question would you like to answer?
             </label>
@@ -107,7 +110,7 @@ export default function ConfigPage() {
           </div>
 
           {/* Project Name */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <label className="block text-sm font-medium" htmlFor="project-name">
               Target Audience
             </label>
@@ -120,7 +123,7 @@ export default function ConfigPage() {
           </div>
 
           {/* Slider */}
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <label className="block text-sm font-medium" htmlFor="interviews">
               Number of Interviews: {numInterviews[0]}
             </label>
