@@ -26,7 +26,7 @@ system_prompt = (
     "thinking process. Respond directly without using <think> tags or showing internal reasoning."
 )
 
-llm = ChatCerebras(model="llama3.3-70b", temperature=0.7, max_tokens=800)
+llm: Optional[ChatCerebras] = None
 
 
 def _init_llm(api_key: Optional[str]) -> None:
@@ -34,7 +34,9 @@ def _init_llm(api_key: Optional[str]) -> None:
     Keeps logic identical; only source of credentials changes per request."""
     global llm
     if api_key:
-        # Prefer explicit api_key if supported; otherwise set env var
+        # Some backends expect OPENAI_API_KEY; set both to be safe
+        os.environ["CEREBRAS_API_KEY"] = api_key
+        os.environ["OPENAI_API_KEY"] = api_key
         try:
             llm = ChatCerebras(
                 model="llama3.3-70b",
@@ -42,15 +44,16 @@ def _init_llm(api_key: Optional[str]) -> None:
                 max_tokens=800,
                 api_key=api_key,  # type: ignore[arg-type]
             )
-            return
         except TypeError:
-            # Fallback: use env variable if api_key param unsupported
-            os.environ["CEREBRAS_API_KEY"] = api_key
             llm = ChatCerebras(model="llama3.3-70b", temperature=0.7, max_tokens=800)
-            return
+    else:
+        # No key provided; leave uninitialized to avoid import-time failures
+        llm = None
 
 
 def ask_ai(prompt: str) -> str:
+    if llm is None:
+        raise RuntimeError("LLM not initialized: missing API key")
     response = llm.invoke([
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": prompt},

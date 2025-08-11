@@ -151,10 +151,3 @@ python3 test_uxr_integration.py
 4. **Dashboard Compatibility**: Consistent JSON format across implementations
 5. **Progress Visibility**: stderr for progress, stdout for JSON output
 
-## Future Enhancements
-
-- WebSocket support for real-time interview progress
-- Caching layer for repeated queries
-- Multiple LLM provider support
-- Custom persona templates
-- Export to various research formats
