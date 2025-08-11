@@ -1,0 +1,21 @@
+# Exclude local Python virtualenvs and caches from upload
+venv/
+newvenv/
+uxr_venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# Node artifacts not needed on Vercel
+npm-debug.log*
+yarn-error.log*
+.pnp.*
+
+# Local editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Large data/output
+uxr-result.json
+
