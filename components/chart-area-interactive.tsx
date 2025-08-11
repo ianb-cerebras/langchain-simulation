@@ -25,10 +25,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@/components/ui/toggle-group"
 
 export const description = "An interactive area chart"
 
@@ -166,28 +162,31 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
   // Generate chart data from simulation or use static demo data
   const chartDataToUse = React.useMemo(() => {
     if (simulationData && simulationData.all_interviews) {
-      // Create a simple progress visualization with 2 data series
+      // Create time-series data showing when interviews occurred
       const totalInterviews = simulationData.num_interviews || 0;
       const totalQuestions = simulationData.all_interviews.reduce(
         (sum, interview) => sum + (interview.responses?.length || 0),
         0
       );
 
-      // Generate time-series data points that show progress
+      // Generate data points for each 5-second interval
       const dataPoints = 20;
       const data = [];
       
-      // Create proper date strings for each data point
-      const startDate = new Date();
+      // Distribute interviews and questions across time intervals
+      // For simplicity, we'll show a pattern that represents the activity
       for (let i = 0; i <= dataPoints; i++) {
-        const progress = i / dataPoints;
-        const currentDate = new Date(startDate);
-        currentDate.setSeconds(startDate.getSeconds() + (i * 5)); // Increment by 5 seconds for each point
+        const timeLabel = `${i * 5}s`;
+        
+        // Calculate how many interviews/questions occurred in this interval
+        // This is a simplified distribution - in reality, you might want to track actual timestamps
+        const interviewsInInterval = Math.max(0, Math.round(totalInterviews / dataPoints));
+        const questionsInInterval = Math.max(0, Math.round(totalQuestions / dataPoints));
         
         data.push({
-          date: currentDate.toISOString().split('T')[0], // Format as YYYY-MM-DD
-          desktop: Math.round(totalQuestions * progress), // Questions asked
-          mobile: Math.round(totalInterviews * progress), // Interviews conducted
+          date: timeLabel,
+          desktop: questionsInInterval, // Questions asked in this interval
+          mobile: interviewsInInterval, // Interviews conducted in this interval
         });
       }
       

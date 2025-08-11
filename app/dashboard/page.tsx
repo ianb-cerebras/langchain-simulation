@@ -18,7 +18,7 @@ interface InsightResult {
     target: string;
     limit: string;
     interview?: {
-      persona: any;
+      persona: unknown;
       responses: Array<{
         question: string;
         answer: string;
@@ -27,7 +27,7 @@ interface InsightResult {
     };
   }>;
   all_interviews?: Array<{
-    persona: any;
+    persona: unknown;
     responses: Array<{
       question: string;
       answer: string;
@@ -113,7 +113,7 @@ export default function DashboardPage() {
 
       {/* Visitors Chart */}
       <div className="mt-6 grid grid-cols-1 gap-6 @[1200px]/content:grid-cols-4">
-        <ChartAreaInteractive simulationData={insights} />
+        <ChartAreaInteractive simulationData={insights ?? undefined} />
       </div>
 
       {/* Simulated Participants Table */}

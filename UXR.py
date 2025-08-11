@@ -117,6 +117,7 @@ class InterviewState(TypedDict):
     current_persona_index: int
     current_question_index: int
     current_interview_history: List[Dict]
+    interview_start_time: float  # Add timing tracking
 
     # Results storage
     all_interviews: List[Dict]
@@ -440,7 +441,8 @@ def run_research_system():
         "current_question_index": 0,
         "current_interview_history": [],
         "all_interviews": [],
-        "synthesis": ""
+        "synthesis": "",
+        "interview_start_time": start_time # Initialize timing
     }
 
 

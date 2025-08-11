@@ -15,8 +15,7 @@ import {
 } from "@/components/ui/card";
 
 export default function ConfigPage() {
-  const TextAreaStyle =
-    "border-input bg-transparent border rounded-md w-full p-3 h-32 resize-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] placeholder:text-muted-foreground";
+  // Removed unused TextAreaStyle
   const [apiKey, setApiKey] = useState("");
   const [project, setProject] = useState("");
   const [numInterviews, setNumInterviews] = useState<number[]>([10]);
