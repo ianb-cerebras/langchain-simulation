@@ -5,7 +5,7 @@ export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   try {
-    const { question, audience, numInterviews } = await req.json();
+    const { question, audience, numInterviews, cerebrasApiKey } = await req.json();
 
     const flaskUrl = process.env.FLASK_URL;
     if (!flaskUrl) {
@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
         audience,
         numInterviews: numInterviews || 5,
         numQuestions: 3,
+        cerebrasApiKey,
       }),
     });
 

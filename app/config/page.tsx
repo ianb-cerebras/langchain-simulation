@@ -56,6 +56,7 @@ export default function ConfigPage() {
           question: apiKey,
           audience: project,
           numInterviews: numInterviews[0],
+          cerebrasApiKey: cerebrasApiKey || undefined,
         }),
       });
       const data = await res.json();
