@@ -651,7 +651,7 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                   <Input id="type" defaultValue={item.type} />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <Label htmlFor="status">Personality</Label>
+                  <Label htmlFor="status">Personality</Label> 
                   <Input id="status" defaultValue={item.status} />
                 </div>
               </div>

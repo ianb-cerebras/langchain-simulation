@@ -32,6 +32,19 @@ import {
 
 export const description = "An interactive area chart"
 
+interface ChartAreaInteractiveProps {
+  simulationData?: {
+    num_interviews?: number;
+    num_questions?: number;
+    all_interviews?: Array<{
+      responses: Array<{
+        question: string;
+        answer: string;
+      }>;
+    }>;
+  };
+}
+
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
   { date: "2024-04-02", desktop: 97, mobile: 180 },
@@ -140,7 +153,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartAreaInteractive() {
+export function ChartAreaInteractive({ simulationData }: ChartAreaInteractiveProps) {
   const isMobile = useIsMobile()
   const [timeRange, setTimeRange] = React.useState("90d")
 
@@ -150,7 +163,45 @@ export function ChartAreaInteractive() {
     }
   }, [isMobile])
 
-  const filteredData = chartData.filter((item) => {
+  // Generate chart data from simulation or use static demo data
+  const chartDataToUse = React.useMemo(() => {
+    if (simulationData && simulationData.all_interviews) {
+      // Create a simple progress visualization with 2 data series
+      const totalInterviews = simulationData.num_interviews || 0;
+      const totalQuestions = simulationData.all_interviews.reduce(
+        (sum, interview) => sum + (interview.responses?.length || 0),
+        0
+      );
+
+      // Generate time-series data points that show progress
+      const dataPoints = 20;
+      const data = [];
+      
+      // Create proper date strings for each data point
+      const startDate = new Date();
+      for (let i = 0; i <= dataPoints; i++) {
+        const progress = i / dataPoints;
+        const currentDate = new Date(startDate);
+        currentDate.setSeconds(startDate.getSeconds() + (i * 5)); // Increment by 5 seconds for each point
+        
+        data.push({
+          date: currentDate.toISOString().split('T')[0], // Format as YYYY-MM-DD
+          desktop: Math.round(totalQuestions * progress), // Questions asked
+          mobile: Math.round(totalInterviews * progress), // Interviews conducted
+        });
+      }
+      
+      return data;
+    }
+    
+    // Otherwise use the static chart data
+    return chartData;
+  }, [simulationData]);
+
+  const filteredData = chartDataToUse.filter((item) => {
+    // If using simulation data, don't filter
+    if (simulationData) return true;
+    
     const date = new Date(item.date)
     const referenceDate = new Date("2024-06-30")
     let daysToSubtract = 90
@@ -167,33 +218,44 @@ export function ChartAreaInteractive() {
   return (
     <Card className="@container/card">
       <CardHeader>
-        <CardTitle>50 Simulated Users: Gen Z</CardTitle>
+        <CardTitle>
+          {simulationData 
+            ? `${simulationData.num_interviews || 0} Interviews Conducted`
+            : "50 Simulated Users: Gen Z"}
+        </CardTitle>
         <CardDescription>
           <span className="hidden @[540px]/card:block">
+            {simulationData 
+              ? "Showing progress of simulation" 
+              : "Showing total visitors for the last 3 months"}
           </span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
+          <span className="@[540px]/card:hidden">
+            {simulationData ? "Progress" : "Last 3 months"}
+          </span>
         </CardDescription>
         <CardAction>
-          <Select value={timeRange} onValueChange={setTimeRange}>
-            <SelectTrigger
-              className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
-              size="sm"
-              aria-label="Select a value"
-            >
-              <SelectValue placeholder="Last 3 months" />
-            </SelectTrigger>
-            <SelectContent className="rounded-xl">
-              <SelectItem value="90d" className="rounded-lg">
-                Last 3 months
-              </SelectItem>
-              <SelectItem value="30d" className="rounded-lg">
-                Last 30 days
-              </SelectItem>
-              <SelectItem value="7d" className="rounded-lg">
-                Last 7 days
-              </SelectItem>
-            </SelectContent>
-          </Select>
+          {!simulationData && (
+            <Select value={timeRange} onValueChange={setTimeRange}>
+              <SelectTrigger
+                className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
+                size="sm"
+                aria-label="Select a value"
+              >
+                <SelectValue placeholder="Last 3 months" />
+              </SelectTrigger>
+              <SelectContent className="rounded-xl">
+                <SelectItem value="90d" className="rounded-lg">
+                  Last 3 months
+                </SelectItem>
+                <SelectItem value="30d" className="rounded-lg">
+                  Last 30 days
+                </SelectItem>
+                <SelectItem value="7d" className="rounded-lg">
+                  Last 7 days
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          )}
         </CardAction>
       </CardHeader>
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">

@@ -113,7 +113,7 @@ export default function DashboardPage() {
 
       {/* Visitors Chart */}
       <div className="mt-6 grid grid-cols-1 gap-6 @[1200px]/content:grid-cols-4">
-        <ChartAreaInteractive />
+        <ChartAreaInteractive simulationData={insights} />
       </div>
 
       {/* Simulated Participants Table */}
