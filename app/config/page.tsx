@@ -17,28 +17,28 @@ import {
 export default function ConfigPage() {
   // Removed unused TextAreaStyle
   const [apiKey, setApiKey] = useState("");
-  const [cerebrasApiKey, setCerebrasApiKey] = useState("");
   const [project, setProject] = useState("");
   const [numInterviews, setNumInterviews] = useState<number[]>([10]);
+  const [cerebrasApiKey, setCerebrasApiKey] = useState("");
   const router = useRouter();
 
-  // Initialize Cerebras API key from localStorage
+  // Load saved Cerebras API key from localStorage
   useEffect(() => {
     try {
-      const stored = window.localStorage.getItem("CEREBRAS_API_KEY");
-      if (stored) setCerebrasApiKey(stored);
+      const saved = localStorage.getItem("CEREBRAS_API_KEY");
+      if (saved) setCerebrasApiKey(saved);
     } catch {
       // ignore
     }
   }, []);
 
-  // Persist Cerebras API key to localStorage on change
+  // Persist Cerebras API key on change
   useEffect(() => {
     try {
       if (cerebrasApiKey) {
-        window.localStorage.setItem("CEREBRAS_API_KEY", cerebrasApiKey);
+        localStorage.setItem("CEREBRAS_API_KEY", cerebrasApiKey);
       } else {
-        window.localStorage.removeItem("CEREBRAS_API_KEY");
+        localStorage.removeItem("CEREBRAS_API_KEY");
       }
     } catch {
       // ignore
@@ -72,8 +72,8 @@ export default function ConfigPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <Card className="w-full max-w-md p-6 space-y-6 shadow-md">
+    <div className="flex min-h-screen items-center justify-center">
+      <Card className="w-full max-w-md space-y-6 shadow-md">
         <CardHeader>
           <CardTitle className="text-xl">Simulation Configuration</CardTitle>
           <CardDescription>Enter the details of your simulation</CardDescription>
@@ -87,7 +87,7 @@ export default function ConfigPage() {
             <Input
               id="cerebras-api-key"
               type="password"
-              placeholder="sk-..."
+              placeholder="sk_cerebras_..."
               value={cerebrasApiKey}
               onChange={(e) => setCerebrasApiKey(e.target.value)}
             />
