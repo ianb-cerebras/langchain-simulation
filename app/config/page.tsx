@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
@@ -17,9 +17,33 @@ import {
 export default function ConfigPage() {
   // Removed unused TextAreaStyle
   const [apiKey, setApiKey] = useState("");
+  const [cerebrasApiKey, setCerebrasApiKey] = useState("");
   const [project, setProject] = useState("");
   const [numInterviews, setNumInterviews] = useState<number[]>([10]);
   const router = useRouter();
+
+  // Initialize Cerebras API key from localStorage
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem("CEREBRAS_API_KEY");
+      if (stored) setCerebrasApiKey(stored);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  // Persist Cerebras API key to localStorage on change
+  useEffect(() => {
+    try {
+      if (cerebrasApiKey) {
+        window.localStorage.setItem("CEREBRAS_API_KEY", cerebrasApiKey);
+      } else {
+        window.localStorage.removeItem("CEREBRAS_API_KEY");
+      }
+    } catch {
+      // ignore
+    }
+  }, [cerebrasApiKey]);
 
   async function handleSave() {
     // Placeholder: persist later
@@ -55,6 +79,20 @@ export default function ConfigPage() {
           <CardDescription>Enter the details of your simulation</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Cerebras API Key */}
+          <div className="space-y-2">
+            <label className="block text-sm font-medium" htmlFor="cerebras-api-key">
+              Cerebras API Key
+            </label>
+            <Input
+              id="cerebras-api-key"
+              type="password"
+              placeholder="sk-..."
+              value={cerebrasApiKey}
+              onChange={(e) => setCerebrasApiKey(e.target.value)}
+            />
+          </div>
+
           {/* API Key */}
           <div className="space-y-2">
             <label className="block text-sm font-medium" htmlFor="api-key">
