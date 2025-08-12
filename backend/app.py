@@ -35,7 +35,23 @@ def run_uxr():
         return jsonify({"success": True, "data": data})
     except Exception as e:
         traceback.print_exc()
-        return jsonify({"success": False, "error": str(e)}), 500
+        # Include a structured error response with request context for debugging
+        return (
+            jsonify(
+                {
+                    "success": False,
+                    "error": str(e),
+                    "context": {
+                        "question_len": len(question),
+                        "audience_len": len(audience),
+                        "num_interviews": num_interviews,
+                        "num_questions": num_questions,
+                    },
+                    "hint": "Enable UXR_DEBUG=1 to log normalization steps on the backend",
+                }
+            ),
+            500,
+        )
 
 @app.get("/api/health")
 def health() -> tuple[str, int]:

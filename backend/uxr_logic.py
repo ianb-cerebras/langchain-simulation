@@ -28,6 +28,15 @@ system_prompt = (
 )
 
 llm: Optional[ChatCerebras] = None
+DEBUG: bool = str(os.getenv("UXR_DEBUG", "0")).lower() not in {"", "0", "false", "no"}
+
+
+def debug_log(*args) -> None:
+    if DEBUG:
+        try:
+            print("[UXR_DEBUG]", *args)
+        except Exception:
+            pass
 
 
 def _init_llm(api_key: Optional[str]) -> None:
@@ -47,18 +56,30 @@ def _init_llm(api_key: Optional[str]) -> None:
             )
         except TypeError:
             llm = ChatCerebras(model="llama3.3-70b", temperature=0.7, max_tokens=800)
+        debug_log("Initialized LLM", {
+            "model": "llama3.3-70b",
+            "temperature": 0.7,
+            "max_tokens": 800,
+            "api_key_present": bool(api_key),
+        })
     else:
         # No key provided; leave uninitialized to avoid import-time failures
         llm = None
+        debug_log("LLM initialization skipped; no API key provided")
 
 
 def ask_ai(prompt: str) -> str:
     if llm is None:
         raise RuntimeError("LLM not initialized: missing API key")
+    debug_log("ask_ai prompt length", len(prompt))
     response = llm.invoke([
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": prompt},
     ])
+    try:
+        debug_log("ask_ai response type", type(response).__name__)
+    except Exception:
+        pass
     return response.content
 
 
@@ -128,7 +149,7 @@ def configuration_node(state: InterviewState) -> Dict:
 persona_prompt = (
     "Generate exactly {num_personas} unique personas for an interview. "
     "Each should belong to the target demographic: {demographic}. "
-    "Respond only in JSON using this exact format: {\"personas\": [ ... ] }"
+    "Respond only in JSON using this exact format: {{\"personas\": [ ... ] }}"
 )
 
 
@@ -139,6 +160,10 @@ def persona_generation_node(state: InterviewState) -> Dict:
 
     print(f"\n👥 Creating {state['num_interviews']} personas...")
     print(persona_prompt.format(num_personas=num_personas, demographic=demographic))
+    debug_log("persona_generation_node state", {
+        "num_personas": num_personas,
+        "demographic": demographic,
+    })
 
     structured_llm = llm.with_structured_output(PersonasList)
 
@@ -157,6 +182,13 @@ def persona_generation_node(state: InterviewState) -> Dict:
             )
             if raw_output is None:
                 raise ValueError("LLM returned None")
+            try:
+                preview = raw_output if isinstance(raw_output, str) else getattr(raw_output, "content", str(raw_output))
+                preview_str = preview if isinstance(preview, str) else str(preview)
+                debug_log(f"raw_output attempt {attempt+1}", preview_str[:500])
+                debug_log("raw_output type", type(raw_output).__name__)
+            except Exception:
+                pass
 
             # Normalize possible formatting issues from the model
             normalized_output = raw_output
@@ -165,6 +197,7 @@ def persona_generation_node(state: InterviewState) -> Dict:
             try:
                 if hasattr(normalized_output, "model_dump") and callable(normalized_output.model_dump):
                     normalized_output = normalized_output.model_dump()
+                    debug_log("normalized via model_dump; keys", list(normalized_output.keys()) if isinstance(normalized_output, dict) else type(normalized_output).__name__)
             except Exception:
                 # Best-effort; continue with other normalizations
                 pass
@@ -175,6 +208,7 @@ def persona_generation_node(state: InterviewState) -> Dict:
                 if isinstance(content, str):
                     try:
                         normalized_output = json.loads(content)
+                        debug_log("normalized from message.content JSON; keys", list(normalized_output.keys()) if isinstance(normalized_output, dict) else type(normalized_output).__name__)
                     except Exception:
                         # If it's not valid JSON, leave as-is and let validation fail gracefully
                         pass
@@ -183,6 +217,7 @@ def persona_generation_node(state: InterviewState) -> Dict:
             if isinstance(normalized_output, str):
                 try:
                     normalized_output = json.loads(normalized_output)
+                    debug_log("normalized from raw JSON string; keys", list(normalized_output.keys()) if isinstance(normalized_output, dict) else type(normalized_output).__name__)
                 except Exception:
                     # Not JSON; keep as-is, validation will handle
                     pass
@@ -205,6 +240,12 @@ def persona_generation_node(state: InterviewState) -> Dict:
                     normalized_keys["personas"] = normalized_keys.pop(original_key)
 
                 normalized_output = normalized_keys
+                debug_log("post-clean keys", list(normalized_keys.keys()))
+
+            # Explicit pre-validation check for clearer error
+            if isinstance(normalized_output, dict) and "personas" not in normalized_output:
+                debug_log("missing personas key after normalization; keys", list(normalized_output.keys()))
+                raise KeyError("personas")
 
             validated = PersonasList.model_validate(normalized_output)
 
@@ -229,6 +270,10 @@ def persona_generation_node(state: InterviewState) -> Dict:
             # Log raw output for diagnostics; avoid crashing on repr issues
             try:
                 print(raw_output)
+            except Exception:
+                pass
+            try:
+                debug_log("normalized_output on failure", normalized_output if isinstance(normalized_output, dict) else type(normalized_output).__name__)
             except Exception:
                 pass
             if attempt == max_retries - 1:
