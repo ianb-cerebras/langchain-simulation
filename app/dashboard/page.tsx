@@ -46,10 +46,34 @@ export default function DashboardPage() {
       .then((data) => {
         if (data && (data.keyInsights || data.participants)) {
           setInsights(data);
+          try { localStorage.setItem("UXR_LAST_RESULT", JSON.stringify(data)); } catch {}
+        } else {
+          // Try localStorage fallback
+          try {
+            const cached = localStorage.getItem("UXR_LAST_RESULT");
+            if (cached) {
+              const parsed = JSON.parse(cached);
+              if (parsed && (parsed.keyInsights || parsed.participants)) {
+                setInsights(parsed);
+              }
+            }
+          } catch {}
         }
         setIsLoading(false);
       })
-      .catch(() => setIsLoading(false));
+      .catch(() => {
+        // On error, also try localStorage
+        try {
+          const cached = localStorage.getItem("UXR_LAST_RESULT");
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            if (parsed && (parsed.keyInsights || parsed.participants)) {
+              setInsights(parsed);
+            }
+          }
+        } catch {}
+        setIsLoading(false);
+      });
   }, []);
 
   // Fallback data when no simulation results exist

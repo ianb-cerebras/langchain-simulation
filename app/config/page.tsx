@@ -62,6 +62,11 @@ export default function ConfigPage() {
       const data = await res.json();
       console.log(data);
       if (data.success) {
+        try {
+          if (data.data) {
+            localStorage.setItem("UXR_LAST_RESULT", JSON.stringify(data.data));
+          }
+        } catch {}
         router.push("/dashboard");
       } else {
         alert("Error running simulation: " + (data.error ?? "unknown"));
