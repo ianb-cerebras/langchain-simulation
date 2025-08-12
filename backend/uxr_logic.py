@@ -69,6 +69,7 @@ class Persona(BaseModel):
     job: str = Field(..., description="Job title or role")
     traits: List[str] = Field(..., description="3-4 personality traits")
     communication_style: str = Field(..., description="How this person communicates")
+    background: str = Field(..., description="One background detail shaping their perspective")
 
 
 class PersonasList(BaseModel):
