@@ -110,6 +110,8 @@ class InterviewState(TypedDict):
     interview_start_time: float
     all_interviews: List[Dict]
     synthesis: str
+    timeline: List[Dict]
+    start_time_iso: str
 
 
 # ----- Node prompts (kept from UXR.py) -----
@@ -139,10 +141,21 @@ def configuration_node(state: InterviewState) -> Dict:
     questions = questions.questions
     print(f"✅ Generated {len(questions)} questions")
 
+    timeline = list(state.get("timeline", []))
+    try:
+        timeline.append({
+            "type": "questions_generated",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "count": len(questions),
+        })
+    except Exception:
+        pass
+
     return {
         "num_questions": DEFAULT_NUM_QUESTIONS,
         "num_interviews": DEFAULT_NUM_INTERVIEWS,
         "interview_questions": questions,
+        "timeline": timeline,
     }
 
 
@@ -258,11 +271,22 @@ def persona_generation_node(state: InterviewState) -> Dict:
             for i, p in enumerate(personas):
                 print(f"Persona {i+1}: {p}")
 
+            timeline = list(state.get("timeline", []))
+            try:
+                timeline.append({
+                    "type": "personas_generated",
+                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                    "count": len(personas),
+                })
+            except Exception:
+                pass
+
             return {
                 "personas": personas,
                 "current_persona_index": 0,
                 "current_question_index": 0,
                 "all_interviews": [],
+                "timeline": timeline,
             }
 
         except (ValidationError, ValueError, TypeError, KeyError) as e:
@@ -321,18 +345,41 @@ def interview_node(state: InterviewState) -> Dict:
         }
     ]
 
+    # Append timeline event for each answer
+    timeline = list(state.get("timeline", []))
+    try:
+        timeline.append({
+            "type": "answer",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "persona_index": state["current_persona_index"],
+            "question_index": state["current_question_index"],
+        })
+    except Exception:
+        pass
+
     if state["current_question_index"] + 1 >= len(state["interview_questions"]):
+        # Interview complete for this persona
+        try:
+            timeline.append({
+                "type": "interview_completed",
+                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "persona_index": state["current_persona_index"],
+            })
+        except Exception:
+            pass
         return {
             "all_interviews": state["all_interviews"]
             + [{"persona": persona, "responses": history}],
             "current_interview_history": [],
             "current_question_index": 0,
             "current_persona_index": state["current_persona_index"] + 1,
+            "timeline": timeline,
         }
 
     return {
         "current_interview_history": history,
         "current_question_index": state["current_question_index"] + 1,
+        "timeline": timeline,
     }
 
 
@@ -393,7 +440,15 @@ def synthesis_node(state: InterviewState) -> Dict:
     print(synthesis)
     print("=" * 60)
 
-    return {"synthesis": synthesis}
+    timeline = list(state.get("timeline", []))
+    try:
+        timeline.append({
+            "type": "synthesis_generated",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+        })
+    except Exception:
+        pass
+    return {"synthesis": synthesis, "timeline": timeline}
 
 
 def interview_router(state: InterviewState) -> str:
@@ -426,10 +481,22 @@ def build_interview_workflow():
 
 def serialize_state(state: Dict) -> Dict:
     """Convert final state to a clean JSON-serializable payload, preserving original content."""
+    start_iso = state.get("start_time_iso") or datetime.utcnow().isoformat() + "Z"
+    end_iso = datetime.utcnow().isoformat() + "Z"
+    duration_seconds = None
+    try:
+        if state.get("interview_start_time"):
+            duration_seconds = max(0.0, time.time() - float(state["interview_start_time"]))
+    except Exception:
+        duration_seconds = None
+
     return {
         "research_question": state.get("research_question", ""),
         "target_demographic": state.get("target_demographic", ""),
         "timestamp": datetime.now().isoformat(),
+        "start_time": start_iso,
+        "end_time": end_iso,
+        "duration_seconds": duration_seconds,
         "num_interviews": state.get("num_interviews", 0),
         "num_questions": state.get("num_questions", 0),
         "interview_questions": state.get("interview_questions", []),
@@ -447,6 +514,7 @@ def serialize_state(state: Dict) -> Dict:
             for interview in state.get("all_interviews", [])
         ],
         "synthesis": state.get("synthesis", ""),
+        "timeline": state.get("timeline", []),
     }
 
 
@@ -475,6 +543,8 @@ def execute_research(
         "all_interviews": [],
         "synthesis": "",
         "interview_start_time": start_time,
+        "timeline": [],
+        "start_time_iso": datetime.utcfromtimestamp(start_time).isoformat() + "Z",
     }
 
     final_state = workflow.invoke(initial_state, {"recursion_limit": 100})

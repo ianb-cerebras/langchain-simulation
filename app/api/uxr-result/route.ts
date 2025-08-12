@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 // Ensure Node.js runtime so we can use the filesystem
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 import { join } from "path";
 import { readFile } from "fs/promises";
 
@@ -26,7 +27,9 @@ export async function GET() {
       data = await readFile(localPath, "utf-8");
     }
 
-    return NextResponse.json(JSON.parse(data));
+    const res = NextResponse.json(JSON.parse(data));
+    res.headers.set("Cache-Control", "no-store");
+    return res;
   } catch {
     return NextResponse.json({ error: "No results yet" }, { status: 404 });
   }

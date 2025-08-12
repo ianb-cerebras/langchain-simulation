@@ -30,6 +30,17 @@ export const description = "An interactive area chart"
 
 interface ChartAreaInteractiveProps {
   simulationData?: {
+    timestamp?: string;
+    start_time?: string;
+    end_time?: string;
+    duration_seconds?: number | null;
+    timeline?: Array<{
+      type: string;
+      timestamp: string;
+      persona_index?: number;
+      question_index?: number;
+      count?: number;
+    }>;
     num_interviews?: number;
     num_questions?: number;
     all_interviews?: Array<{
@@ -159,60 +170,81 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
     }
   }, [isMobile])
 
+  const formatSeconds = React.useCallback((totalSeconds: number) => {
+    const s = Math.max(0, Math.floor(totalSeconds))
+    const m = Math.floor(s / 60)
+    const sec = s % 60
+    return `${m}:${sec.toString().padStart(2, "0")}`
+  }, [])
+
   // Generate chart data from simulation or use static demo data
   const chartDataToUse = React.useMemo(() => {
     if (simulationData && simulationData.all_interviews) {
-      // Create time-series data showing when interviews occurred
-      const totalInterviews = simulationData.num_interviews || 0;
-      const totalQuestions = simulationData.all_interviews.reduce(
-        (sum, interview) => sum + (interview.responses?.length || 0),
-        0
-      );
+      const bucketSizeSeconds = 5
+      // Determine start/end from backend if available
+      const startMs = (() => {
+        const src = simulationData.start_time || simulationData.timestamp
+        const d = src ? new Date(src) : null
+        return d && !isNaN(d.getTime()) ? d.getTime() : Date.now()
+      })()
+      const endMs = (() => {
+        const src = simulationData.end_time
+        const d = src ? new Date(src) : null
+        const fallback = startMs + (simulationData.duration_seconds || 0) * 1000
+        return d && !isNaN(d.getTime()) ? d.getTime() : fallback
+      })()
 
-      // Generate data points for each 5-second interval
-      const dataPoints = 20;
-      const data = [];
-      
-      // Distribute interviews and questions across time intervals
-      // For simplicity, we'll show a pattern that represents the activity
-      for (let i = 0; i <= dataPoints; i++) {
-        const timeLabel = `${i * 5}s`;
-        
-        // Calculate how many interviews/questions occurred in this interval
-        // This is a simplified distribution - in reality, you might want to track actual timestamps
-        const interviewsInInterval = Math.max(0, Math.round(totalInterviews / dataPoints));
-        const questionsInInterval = Math.max(0, Math.round(totalQuestions / dataPoints));
-        
-        data.push({
-          date: timeLabel,
-          desktop: questionsInInterval, // Questions asked in this interval
-          mobile: interviewsInInterval, // Interviews conducted in this interval
-        });
+      const durationSec = Math.max(0, Math.ceil((endMs - startMs) / 1000)) || 1
+      const bucketCount = Math.max(1, Math.ceil(durationSec / bucketSizeSeconds))
+
+      // Initialize buckets
+      const buckets = Array.from({ length: bucketCount }, (_, i) => ({
+        t: i * bucketSizeSeconds, // seconds from start
+        desktop: 0, // questions
+        mobile: 0, // interviews
+      }))
+
+      const timeline = simulationData.timeline || []
+      for (const ev of timeline) {
+        const ts = new Date(ev.timestamp)
+        if (isNaN(ts.getTime())) continue
+        const offsetSec = Math.max(0, Math.floor((ts.getTime() - startMs) / 1000))
+        const idx = Math.min(
+          buckets.length - 1,
+          Math.floor(offsetSec / bucketSizeSeconds)
+        )
+        if (ev.type === "answer") {
+          buckets[idx].desktop += 1
+        } else if (ev.type === "interview_completed") {
+          buckets[idx].mobile += 1
+        }
       }
-      
-      return data;
+
+      return buckets
     }
     
     // Otherwise use the static chart data
     return chartData;
   }, [simulationData]);
 
-  const filteredData = chartDataToUse.filter((item) => {
-    // If using simulation data, don't filter
-    if (simulationData) return true;
-    
-    const date = new Date(item.date)
-    const referenceDate = new Date("2024-06-30")
-    let daysToSubtract = 90
-    if (timeRange === "30d") {
-      daysToSubtract = 30
-    } else if (timeRange === "7d") {
-      daysToSubtract = 7
-    }
-    const startDate = new Date(referenceDate)
-    startDate.setDate(startDate.getDate() - daysToSubtract)
-    return date >= startDate
-  })
+  const filteredData = React.useMemo(() => {
+    if (simulationData) return chartDataToUse
+    return (chartDataToUse as Array<{ date: string; desktop: number; mobile: number }>).filter(
+      (item) => {
+        const date = new Date(item.date)
+        const referenceDate = new Date("2024-06-30")
+        let daysToSubtract = 90
+        if (timeRange === "30d") {
+          daysToSubtract = 30
+        } else if (timeRange === "7d") {
+          daysToSubtract = 7
+        }
+        const startDate = new Date(referenceDate)
+        startDate.setDate(startDate.getDate() - daysToSubtract)
+        return date >= startDate
+      }
+    )
+  }, [chartDataToUse, simulationData, timeRange])
 
   return (
     <Card className="@container/card">
@@ -259,7 +291,11 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
       </CardHeader>
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
-          config={chartConfig}
+          config={React.useMemo(() => ({
+            visitors: { label: simulationData ? "Simulation" : "Visitors" },
+            desktop: { label: simulationData ? "Questions" : "Desktop", color: "var(--primary)" },
+            mobile: { label: simulationData ? "Interviews" : "Mobile", color: "var(--primary)" },
+          }), [simulationData])}
           className="aspect-auto h-[250px] w-full"
         >
           <AreaChart data={filteredData}>
@@ -291,13 +327,19 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
             </defs>
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="date"
+              dataKey={simulationData ? ("t" as const) : ("date" as const)}
               tickLine={false}
               axisLine={false}
               tickMargin={8}
               minTickGap={32}
               tickFormatter={(value) => {
+                if (simulationData) {
+                  return `${formatSeconds(Number(value))}`
+                }
                 const date = new Date(value)
+                if (isNaN(date.getTime())) {
+                  return String(value)
+                }
                 return date.toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
@@ -309,7 +351,14 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                    if (simulationData) {
+                      return `t+${formatSeconds(Number(value))}`
+                    }
+                    const d = new Date(value)
+                    if (isNaN(d.getTime())) {
+                      return String(value)
+                    }
+                    return d.toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                     })
