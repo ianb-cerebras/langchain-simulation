@@ -17,8 +17,8 @@ from langgraph.graph import StateGraph, END
 
 
 # Configuration Constants (kept from UXR.py)
-DEFAULT_NUM_INTERVIEWS = 10
-DEFAULT_NUM_QUESTIONS = 5
+DEFAULT_NUM_INTERVIEWS = 11
+DEFAULT_NUM_QUESTIONS = 3
 
 
 # LLM setup (kept from UXR.py; requires CEREBRAS_API_KEY env var)

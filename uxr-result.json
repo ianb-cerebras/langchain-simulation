@@ -3,671 +3,815 @@
     {
       "persona": {
         "age": 20,
-        "background": "Grew up in a multicultural community",
-        "communication_style": "informal",
+        "background": "grew up in a multicultural family",
+        "communication_style": "direct",
         "job": "Student",
-        "name": "Ethan Thompson",
+        "name": "Ethan Kim",
         "traits": [
           "curious",
           "adventurous",
-          "open-minded",
-          "tech-savvy"
+          "open-minded"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen online, he seems like a pretty chill guy who's into some cool tech stuff. I've watched a few of his YouTube videos and he's got some sick coding skills, so I guess that's pretty cool. But, I mean, cool is subjective, right?",
-          "question": "Is Ian Baime cool?"
+          "answer": "That's super gross, I'd be pretty freaked out if I found mold on a Skittle I was about to eat. I'd definitely not eat it, and I'd probably check the rest of the bag to see if the mold was just isolated to that one Skittle. It's kinda ruining my craving for Skittles now, though.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Ian Baime seems cool because he's always tinkering with new gadgets and finding innovative ways to use tech, which is pretty impressive. I've seen him hack together some pretty sweet projects in his spare time, and it's inspiring to see someone so passionate about what they do. Plus, he's always down to share his knowledge and collaborate on new ideas, which makes him pretty chill to be around.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's kinda gross. I'd probably still eat Skittles, but I'd definitely check the batch number or the candy itself before devouring a handful - I'm not trying to risk getting sick. I'd be a bit more cautious, but I'm not gonna lie, I love Skittles too much to quit them cold turkey.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "I think Ian Baime is cool because he's always pushing boundaries and trying new things, which is really inspiring to me. I've seen his videos and projects online, and the way he combines tech and creativity is pretty awesome. Plus, he's not afraid to take risks and experiment, which is something I try to do in my own life, too.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Honestly, finding mold on Skittles would be a total turn-off for me - it's just gross. I'd definitely think twice about buying them again, and I'd probably start questioning the brand's quality control. It would take a lot for me to trust Skittles again after that.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably Google the symptoms and risks, and if I started feeling weird or nauseous, I'd consider hitting up the health center on campus to get checked out. It's not the end of the world, but still, moldy candy is not exactly what I'd call a healthy snack.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Honestly, that's super gross, so yeah, I'd definitely want a refund or a replacement - I didn't pay for moldy candy. I'd probably take it back to the store where I bought it and see what they can do for me. Hopefully, they'd take care of it and hook me up with a fresh bag of Skittles.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     },
     {
       "persona": {
         "age": 22,
-        "background": "Has a strong online presence",
+        "background": "has a large following on Instagram",
         "communication_style": "expressive",
-        "job": "Freelance writer",
-        "name": "Liam Patel",
+        "job": "Social Media Influencer",
+        "name": "Lila Patel",
         "traits": [
-          "creative",
-          "independent",
           "confident",
+          "creative",
           "determined"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I don't really know Ian Baime, but from what I've seen online, he seems like a pretty chill guy. I mean, he's got his own style and isn't afraid to speak his mind, which is kinda cool, I guess. But, cool is subjective, right, so I wouldn't go out of my way to say he's the coolest dude ever or anything.",
-          "question": "Is Ian Baime cool?"
+          "answer": "Ugh, that's literally my worst nightmare - I'd be totally grossed out if I found mold on a Skittle I was about to eat. I'd probably drop the whole bag and take a step back, questioning the entire candy industry at that point. I mean, who wants to eat something that's been growing its own ecosystem, right?",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Honestly, I don't really know who Ian Baime is, but if I had to take a guess, I'd say what makes him cool is probably his unique perspective and style - every creative person has their own vibe, right? Maybe he's got a bold approach to his work or a refreshing outlook on life. But hey, without knowing more about the guy, it's hard to say for sure.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's kinda gross - I mean, who wants to eat moldy Skittles? I'd probably still eat them, but I'd definitely check the batch number first and make sure they're fresh. It's not a deal-breaker for me, but I'm not trying to risk getting sick over some sour sugar rush either.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "Honestly, I've never really met Ian Baime, but from what I've seen online, the guy's got a crazy passion for storytelling, which I can definitely vibe with. His writing style's pretty raw and unapologetic, and I appreciate that about him. Not gonna lie, though, I'm more about forging my own path than idolizing someone else's work.",
-          "question": "Why do you think Ian Baime is cool?"
-        }
-      ]
-    },
-    {
-      "persona": {
-        "age": 19,
-        "background": "Active in social justice movements",
-        "communication_style": "visual",
-        "job": "Part-time artist",
-        "name": "Ava Lee",
-        "traits": [
-          "imaginative",
-          "empathetic",
-          "spontaneous",
-          "environmentally conscious"
-        ]
-      },
-      "responses": [
-        {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a pretty chill guy who's really into sustainability, which I can definitely appreciate. I've seen his posts about reducing waste and living eco-friendly, and it's great to see someone passionate about making a difference. But, cool is subjective, right?",
-          "question": "Is Ian Baime cool?"
+          "answer": "Honestly, finding mold on Skittles would totally freak me out and make me question the brand's quality control. I mean, I love Skittles, but if they can't even keep their candy fresh, it's hard to trust the brand. It would definitely make me think twice before posting about them on my socials.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
         },
         {
-          "answer": "I've met Ian a few times, and I think what makes him cool is how passionate he is about his work - he's always talking about innovative ways to reduce waste and live sustainably. It's pretty inspiring, but also a bit intimidating, you know? He's just so knowledgeable and driven, it's like, wow, I wanna be that invested in something too.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, who knows what kind of bacteria or toxins are growing on that thing? I'd probably Google my symptoms and see if I need to head to urgent care, just to be safe. My mom always told me to check my food before eating it, and now I'm totally regretting not listening!",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
         },
         {
-          "answer": "Ian Baime seems cool because he's always talking about sustainable living and it's really inspiring to see someone so passionate about saving the planet. I've seen his art pieces made from recycled materials and they're actually pretty amazing, it's like he's speaking my language. Plus, he's not afraid to think outside the box and try new things, which I think is really refreshing.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Honestly, that's just gross - I'd totally expect a refund or a replacement, no question. I mean, who wants to eat moldy candy, right? I'd probably also take to social media to share my disappointing experience and make sure others are aware of the issue.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     },
     {
       "persona": {
         "age": 21,
-        "background": "Participates in coding competitions",
-        "communication_style": "direct",
-        "job": "App developer",
-        "name": "Julian Sanchez",
+        "background": "taught himself to code at a young age",
+        "communication_style": "precise",
+        "job": "Software Engineer",
+        "name": "Julian Lee",
         "traits": [
           "analytical",
           "logical",
-          "detail-oriented",
-          "competitive"
+          "reserved"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I don't really know Ian Baime, but from what I've seen online, he seems like a solid guy who knows his stuff about Android development. I wouldn't say he's \"cool\" in the classical sense, but he's definitely someone I'd want to pick his brain about coding. Not really my go-to definition of cool, but I guess he's alright.",
-          "question": "Is Ian Baime cool?"
+          "answer": "Honestly, I'd be pretty grossed out if I found mold on a Skittle I was about to eat. I mean, it's not like I expect my candy to be sterile or anything, but mold is just a clear sign that something's gone wrong. I'd probably just toss the whole bag and grab a new one, no point in risking it.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he's got a pretty solid sense of humor and isn't afraid to speak his mind, which is kinda cool, I guess. I mean, he's not trying to impress anyone, he's just being himself, and that's refreshing. But, to be real, I've only interacted with him a few times, so my opinion is pretty limited.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's a bit of a turnoff - I mean, mold isn't exactly something you want to ingest. I'd probably still eat Skittles, but I'd definitely check the packaging and expiration dates more closely before consuming them. It's not a deal-breaker, but it's definitely a consideration.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "Honestly, I don't really know Ian Baime, but from what I've seen, he seems like a chill guy who's really into tech, which is cool, I guess. I mean, we've had some decent conversations about coding and app development, and he's got some solid insights, so that's a plus. But, to be real, I'm not exactly sure what makes him \"cool\" beyond that.",
-          "question": "Why do you think Ian Baime is cool?"
-        }
-      ]
-    },
-    {
-      "persona": {
-        "age": 20,
-        "background": "Has a large following on social media",
-        "communication_style": "engaging",
-        "job": "Social media influencer",
-        "name": "Sophia Rodriguez",
-        "traits": [
-          "charismatic",
-          "outgoing",
-          "ambitious",
-          "authentic"
-        ]
-      },
-      "responses": [
-        {
-          "answer": "Honestly, I've met Ian Baime a few times, and he's got a certain vibe going on, but I'm not totally convinced he's cool, you know? He seems kinda try-hard, like he's really attempting to be this edgy, mysterious guy, but it comes off a bit forced. I mean, I've seen cooler, but hey, being cool is subjective, right?",
-          "question": "Is Ian Baime cool?"
+          "answer": "Honestly, finding mold on Skittles would be a major turnoff for me - it's a pretty basic expectation that the candy I eat is free from mold. I'd probably think twice before buying Skittles again, at least until I heard that the issue had been resolved. It's not like I'd boycott the brand forever, but it would definitely give me pause.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
         },
         {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems cool because he's unapologetically himself and isn't afraid to speak his mind. I mean, it takes guts to be that raw and honest, you know? But, I'd need to get to know him better to say for sure what makes him truly cool.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, I'd be a bit worried if I ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably monitor my health for the next day or so, keeping an eye out for any weird symptoms like stomach pain or nausea. It's not the end of the world, but I'd definitely be cautious and consider talking to a doctor if I started feeling off.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
         },
         {
-          "answer": "Honestly, I think Ian Baime is cool because he's unapologetically himself, you know? I've seen his content and he's got this chill, laid-back vibe that's super relatable, but at the same time, he's not afraid to speak his mind and share his passions. Plus, his sense of humor is everything - it's like, totally on point!",
-          "question": "Why do you think Ian Baime is cool?"
-        }
-      ]
-    },
-    {
-      "persona": {
-        "age": 22,
-        "background": "Has organized community events",
-        "communication_style": "persuasive",
-        "job": "Environmental activist",
-        "name": "Mia Kim",
-        "traits": [
-          "passionate",
-          "driven",
-          "compassionate",
-          "idealistic"
-        ]
-      },
-      "responses": [
-        {
-          "answer": "Honestly, I don't really know Ian Baime, but from what I've seen, he seems like a pretty laid-back guy who's into sustainability, which is definitely cool in my book. I mean, anyone who's passionate about saving the planet is a hero in my eyes, but I don't know him well enough to say if he's actually \"cool\" or not. He seems alright, I guess!",
-          "question": "Is Ian Baime cool?"
-        },
-        {
-          "answer": "Honestly, I've met Ian a few times at climate rallies, and what I think makes him cool is his unwavering dedication to the cause - the guy's always speaking truth to power and holding leaders accountable. Plus, he's got this unapologetic energy that's pretty infectious. He's not afraid to get a little confrontational when it comes to fighting for the planet, and I respect that.",
-          "question": "What makes Ian Baime cool?"
-        },
-        {
-          "answer": "Honestly, I think Ian Baime is cool because he's all about living simply and sustainably, which really resonates with me. I mean, have you seen his tiny house and the way he's reduced his waste to almost zero? It's super inspiring to see someone walking the walk like that.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Honestly, I'd be pretty disappointed if I found mold on my Skittles, so yeah, I'd expect a refund or a replacement. I mean, it's not like it's a complicated product, it's just candy, so quality control should be pretty straightforward. I'd probably just return them to the store and get a new bag, no big deal.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     },
     {
       "persona": {
         "age": 19,
-        "background": "Performs at local venues",
-        "communication_style": "creative",
-        "job": "Musician",
-        "name": "Noah Brooks",
+        "background": "comes from a family of artists",
+        "communication_style": "emotive",
+        "job": "Artist",
+        "name": "Ava Morales",
         "traits": [
-          "expressive",
-          "emotional",
-          "intuitive",
-          "adaptable"
+          "imaginative",
+          "empathetic",
+          "spontaneous"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I've only met Ian a few times, but he seems like a pretty chill dude - always down to earth and willing to lend a listening ear. I've seen him at a few gigs, and he's always vibing to the music, you know? I wouldn't say I know him super well, but from what I've seen, he's definitely got a cool, laid-back energy about him.",
-          "question": "Is Ian Baime cool?"
+          "answer": "Ugh, that's so gross! I'd feel a mix of disappointment and disgust, like my excitement to eat that Skittle just got totally ruined. I'd probably drop it and wash my hands, feeling a bit queasy at the thought of almost eating mold - it's just so unappetizing!",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Ian Baime's cool factor is all about his unapologetic individuality - the way he weaves together eclectic styles and sounds is seriously inspiring. I mean, have you seen him live? He's got this raw energy that's infectious, you know? It's like he's tapping into something deeper, and that's what makes him so magnetic.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's kinda gross - I don't think I could stomach eating Skittles if I knew some batches had mold on them. I mean, I love the sweet and tangy taste, but mold is just a hard pass for me. I'd probably stick to making art with them instead, like a colorful still life, rather than risking a stomachache.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "Ian Baime's got this infectious energy, you know? I've seen him perform and he's just so in the zone, it's like he's speaking straight to your soul - it's really inspiring to watch. I think what makes him cool is how he's not afraid to be vulnerable and raw with his music, it's super relatable.",
-          "question": "Why do you think Ian Baime is cool?"
-        }
-      ]
-    },
-    {
-      "persona": {
-        "age": 21,
-        "background": "Has written for school newspapers",
-        "communication_style": "investigative",
-        "job": "Journalist",
-        "name": "Charlotte Hall",
-        "traits": [
-          "inquisitive",
-          "objective",
-          "resourceful",
-          "tenacious"
-        ]
-      },
-      "responses": [
-        {
-          "answer": "I've had the chance to interview Ian Baime a few times, and while he's definitely got a certain charm, I'm not sure I'd call him \"cool\" outright. He's got a quirky sense of humor and can be pretty witty, but sometimes his attempts at being funny fall a bit flat. Overall, I think he's more interesting than cool, if that makes sense.",
-          "question": "Is Ian Baime cool?"
+          "answer": "Honestly, it would totally freak me out if I found mold on my Skittles - it's like, a major trust breaker. I'd probably still love the brand, but I'd be way more cautious about checking the expiration dates and packaging before devouring them. It's not exactly the most inspiring thing to think about when you're trying to tap into your creativity, you know?",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
         },
         {
-          "answer": "Honestly, I've done some digging on Ian Baime, and from what I've gathered, he's got a pretty impressive track record as a journalist himself. What makes him cool, in my opinion, is his fearless approach to storytelling and his ability to tackle tough topics head-on. He's not afraid to ruffle a few feathers, which I think is pretty admirable, even if it doesn't always make him the most popular guy in the room.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold is just so gross and it can't be good for you, right? I'd probably worry that I'd get some kind of stomach bug or infection, and I'd definitely be keeping an eye on how my body reacts. I'd probably end up googling all the possible worst-case scenarios, too, which would just add to my anxiety.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
         },
         {
-          "answer": "Honestly, I've only met Ian Baime a handful of times, but from what I've seen, he's got a certain swagger to him that's hard to deny. As a journalist, I've learned to separate fact from fiction, and while Ian's definitely charming, I'm not entirely convinced he's as cool as everyone makes him out to be. Still, there's something about him that's piqued my interest, and I'd love to dig deeper to get a better sense of who he really is.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Ugh, that's so gross! I would totally ask for a refund or a new bag, I mean, who wants to eat moldy Skittles? I'd probably take it back to the store and be like, \"Hey, can I get a fresh bag, please?\"",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     },
     {
       "persona": {
         "age": 20,
-        "background": "Plays on a college sports team",
+        "background": "has been playing sports since childhood",
         "communication_style": "assertive",
         "job": "Athlete",
-        "name": "Logan Walker",
+        "name": "Liam Chen",
         "traits": [
           "competitive",
           "disciplined",
-          "resilient",
-          "team-oriented"
+          "outgoing"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a solid dude. I've heard he's pretty into his own thing, which is cool, I guess. I'm more focused on my game and my team, so I don't really have an opinion either way, you know?",
-          "question": "Is Ian Baime cool?"
+          "answer": "Ugh, that's disgusting! I'd be pretty grossed out if I found mold on a Skittle I was about to eat - I mean, who wants to put something funky like that in their body, especially when I'm trying to stay on top of my game. I'd definitely toss it and grab a new one, no way I'm risking getting sick over a candy.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Ian Baime's cool factor is pretty low in my book, to be honest. I mean, I don't really know the guy, but from what I've seen, he seems kinda awkward and not really my type of person. I'm all about being competitive and pushing myself to be the best, and I just don't get that vibe from him.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's kinda gross - I don't think I could still eat Skittles if I knew some batches had mold on them. I mean, I'm trying to keep my body in top shape for competitions, so putting moldy candy in my system is a definite no-go. I'd have to find a new snack to fuel my cravings.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a chill guy who's really into his own thing. I respect that about him - he's not trying to be someone he's not, you know? He's just doing his own thing and that's pretty cool, I guess.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Honestly, finding mold on Skittles would be a total turnoff for me - I mean, who wants to eat candy that's gone bad? It'd definitely make me question the brand's quality control and I'd probably think twice before buying them again. As an athlete, I've got to be careful about what I put in my body, so moldy Skittles are a hard pass for me.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty concerned if I accidentally ate a moldy Skittle - I mean, I'm an athlete, my body is my temple, and I don't want anything messing with my performance. I'd probably freak out a bit and hit up Google to see what kind of symptoms I should be looking out for. I'd definitely keep an eye on how I'm feeling and consider talking to my trainer or a doctor if I start to feel off.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Honestly, that's disgusting - I'd definitely want a refund or a fresh bag, no question. I mean, who wants to risk getting sick from eating moldy candy, right? I'd take it back to the store and expect them to hook me up with a new bag or my money back, that's just common sense.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     },
     {
       "persona": {
         "age": 22,
-        "background": "Has started their own business",
-        "communication_style": "confident",
-        "job": "Entrepreneur",
-        "name": "Emily Chen",
+        "background": "has a strong interest in social justice",
+        "communication_style": "investigative",
+        "job": "Journalist",
+        "name": "Sophia Rodriguez",
         "traits": [
-          "innovative",
-          "risk-taker",
-          "strategic",
-          "results-driven"
+          "inquisitive",
+          "objective",
+          "persistent"
         ]
       },
       "responses": [
         {
-          "answer": "Honestly, I've only met Ian a few times, but from what I've seen, he's got a pretty dry sense of humor that can be kinda funny. I wouldn't say he's the coolest guy in the room, but he's definitely got his own vibe going on. I'm more about building my business empire than judging who's cool or not, though.",
-          "question": "Is Ian Baime cool?"
+          "answer": "Ugh, I'd be totally grossed out if I found mold on a Skittle I was about to eat - it's just not something you expect to see on your candy. I'd probably drop it immediately and question the packaging or storage, wondering how that even happened. Honestly, it would kind of ruin my snack time vibe.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
         },
         {
-          "answer": "Honestly, I don't really know Ian Baime, but from what I've heard, he's got a pretty bold sense of style and isn't afraid to speak his mind, which can be pretty cool, I guess. I mean, confidence and authenticity can be really attractive, but it also depends on how you carry yourself, you know? I'd need to meet him in person to really form an opinion, though.",
-          "question": "What makes Ian Baime cool?"
+          "answer": "Honestly, that's a bit of a turn-off for me - I mean, who wants to risk biting into a moldy Skittle? I'd probably still eat them, but I'd definitely be checking the expiration dates and packaging more closely, and maybe opting for a different candy if I'm being totally honest. The thought of mold on my sweets is just not something I can easily shake off.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
         },
         {
-          "answer": "Honestly, I think Ian Baime is cool because he's not afraid to challenge the status quo and try new things, which is something I really admire as an entrepreneur. His willingness to take risks and push boundaries is inspiring, and I love how he's always thinking outside the box. Plus, his passion is infectious, and being around him always gets me pumped up to tackle my own projects.",
-          "question": "Why do you think Ian Baime is cool?"
+          "answer": "Honestly, finding mold on Skittles would be a major turnoff for me - it's a serious concern for food safety and quality control. As a journalist, I've seen how incidents like this can damage a brand's reputation, and I think it would definitely affect my perception of the brand, making me question their manufacturing processes. It's not just about the candy itself, but about the trust you place in a brand to deliver a safe product.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably Google the symptoms of mold poisoning and keep a close eye on how I'm feeling over the next few hours. Depending on how I react, I might even consider reaching out to my doctor or a medical hotline to get some advice.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty grossed out if I found mold on my Skittles, so yeah, I'd definitely expect a refund or a replacement - it's just basic quality control, you know? I'd probably reach out to the company and see what their policy is on defective products, and hopefully, they'd make it right. A replacement or refund seems like the least they could do, considering I paid good money for a product that's supposed to be safe to eat.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+        }
+      ]
+    },
+    {
+      "persona": {
+        "age": 21,
+        "background": "started her own business in college",
+        "communication_style": "persuasive",
+        "job": "Entrepreneur",
+        "name": "Mia Wong",
+        "traits": [
+          "ambitious",
+          "resourceful",
+          "risk-taker"
+        ]
+      },
+      "responses": [
+        {
+          "answer": "Ugh, that's disgusting! I'd be totally grossed out and would immediately throw the whole bag away - I don't want to risk eating something that's been contaminated. It's not like I can just pick out the moldy one and expect the rest to be fine, that's just not worth the risk.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+        },
+        {
+          "answer": "Honestly, that's kinda gross - I'd probably still eat Skittles, but I'd be super cautious about checking the expiration dates and packaging for any signs of damage. I'm not trying to be a hero or anything, but at the same time, I'm not about to let a little risk hold me back from enjoying my favorite candy. I'd just take my chances and hope I don't get a bad batch.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+        },
+        {
+          "answer": "Honestly, finding mold on Skittles would be a total turnoff for me - it's a major red flag for quality control. As someone who's all about taking calculated risks, I'd think twice about investing in or partnering with a brand that can't even get the basics right. It's not just about the candy itself, it's about the reputation and trust that comes with a brand name.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold is gross and can be toxic, right? I'd probably Google the symptoms of mold poisoning and keep an eye on how I'm feeling, just in case. But, I'm not gonna lie, I'd also be low-key worried that it's gonna ruin my whole day and throw off my hustle.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Ugh, that's gross. I'd definitely expect a refund or a replacement, no question - I didn't pay for moldy candy. I'd probably reach out to the store where I bought them and see what their return policy is, hopefully, they'll hook me up with a fresh bag.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+        }
+      ]
+    },
+    {
+      "persona": {
+        "age": 19,
+        "background": "has been playing music since he was a teenager",
+        "communication_style": "creative",
+        "job": "Musician",
+        "name": "Noah Hall",
+        "traits": [
+          "expressive",
+          "passionate",
+          "quirky"
+        ]
+      },
+      "responses": [
+        {
+          "answer": "Ugh, that's totally gross! I'd be super bummed if I found mold on a Skittle, it's like, my favorite snack to munch on while I'm jamming out on my guitar. I'd probably just toss it and grab another one, but it'd definitely kill my vibe for a sec.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+        },
+        {
+          "answer": "Honestly, that's kinda gross, you know? I'd probably still eat Skittles, but I'd be checking each one like a paranoid freak before popping it in my mouth. I mean, I love Skittles, but mold is a major vibe killer, you feel me?",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+        },
+        {
+          "answer": "Honestly, finding mold on Skittles would be a total bummer, you know? It'd make me question the whole brand, like, how could they let that happen? I'd still jam out to the sweet tunes, but my trust in Skittles would definitely be, like, tainted, you feel?",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, mold is like, a total vibe killer, you know? I'd probably worry that I'd get some gnarly stomach issues or something, and that would totally throw off my music gigs for the week. I'd likely end up googling \"what happens if you eat moldy candy\" and freaking myself out even more.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Ugh, that's gross! I'd definitely want a refund or a fresh bag, you know, one that's not gonna make me sick. I mean, I'm all about taking risks with my music, but not with my snacks, that's just not cool.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+        }
+      ]
+    },
+    {
+      "persona": {
+        "age": 20,
+        "background": "has been involved in environmental causes since high school",
+        "communication_style": "convincing",
+        "job": "Environmental Activist",
+        "name": "Charlotte Brown",
+        "traits": [
+          "compassionate",
+          "dedicated",
+          "outspoken"
+        ]
+      },
+      "responses": [
+        {
+          "answer": "Ugh, that's disgusting! I'd be totally grossed out, to be honest - I mean, who wants to eat moldy candy? It's not just the health risks that bother me, but also the fact that it's a sign of waste and poor production practices, which is really frustrating as an environmental activist.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+        },
+        {
+          "answer": "Honestly, no way would I still eat Skittles if I knew some batches had mold on them - that's just gross and unhealthy. As someone who's passionate about the environment and our well-being, I'd rather opt for sustainable and safe alternatives, like organic fruit or locally-made candies. It's all about making conscious choices, you know?",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+        },
+        {
+          "answer": "Honestly, if I found out that Skittles had mold on them, I'd be pretty grossed out and it would definitely affect my perception of the brand. As someone who cares deeply about the environment and the impact of consumerism, it's not just about the health risks - it's also about the lack of accountability and transparency from the company. It would make me question the brand's values and priorities, you know?",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, who knows what kind of toxins or bacteria are growing on that thing? As someone who's passionate about the environment and healthy living, the thought of putting something so contaminated in my body is really unsettling. I'd probably try to induce vomiting or drink a ton of water to flush it out, and then head to the doctor just in case.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Honestly, I'd be super grossed out if I found mold on my Skittles, but I'd probably ask for a replacement or a refund, depending on the store's policy. As someone who cares deeply about the environment, I'd also want to know what measures the company is taking to reduce waste and prevent this kind of thing from happening in the future. I'd likely take to social media to share my experience and encourage others to hold the company accountable for their quality control and sustainability practices.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+        }
+      ]
+    },
+    {
+      "persona": {
+        "age": 22,
+        "background": "comes from a family of educators",
+        "communication_style": "clear",
+        "job": "Teacher",
+        "name": "Jackson Davis",
+        "traits": [
+          "patient",
+          "supportive",
+          "organized"
+        ]
+      },
+      "responses": [
+        {
+          "answer": "Ugh, that's disgusting! I'd be pretty grossed out if I found mold on a Skittle, to be honest - it's not exactly what you want to see when you're about to eat something. I'd definitely toss it in the trash and wash my hands, no way I'm taking a chance on eating something that's been growing mold.",
+          "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+        },
+        {
+          "answer": "Honestly, that's a bit of a turn-off for me - I mean, who wants to eat candy with mold on it? I think I'd still eat Skittles, but I'd definitely check the packaging and expiration dates more closely before buying them. It's not a deal-breaker, but it's definitely a concern that would make me more cautious about my Skittles snacking.",
+          "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+        },
+        {
+          "answer": "Honestly, finding mold on Skittles would be a total turn-off for me - it's just not something you expect from a brand you trust. I think it would definitely make me question the quality control and safety of their products, which would be a bummer because I've always been a fan of Skittles. It would take some serious effort from the company to regain my trust after something like that.",
+          "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+        },
+        {
+          "answer": "Honestly, I'd be a bit worried if I ate a moldy Skittle - I mean, mold isn't exactly something you want in your system. I'd probably keep an eye on how I'm feeling over the next day or so, just to make sure I don't start experiencing any weird symptoms. But I'm not one to freak out easily, so I'd likely just drink some water and hope for the best.",
+          "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+        },
+        {
+          "answer": "Honestly, I'd be pretty grossed out if I opened a bag of Skittles and found mold, so yeah, I'd definitely expect a refund or a replacement. I mean, that's just not something you want to see in your candy, and it's a safety issue too. I'd probably reach out to the store where I bought them or the manufacturer to get it sorted out.",
+          "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
         }
       ]
     }
   ],
+  "duration_seconds": 55.71220135688782,
+  "end_time": "2025-08-12T06:52:07.953691Z",
   "interview_questions": [
-    "Is Ian Baime cool?",
-    "What makes Ian Baime cool?",
-    "Why do you think Ian Baime is cool?"
+    "How would you feel if you found mold on a Skittle you were about to eat?",
+    "Would you still eat Skittles if you knew some batches had mold on them?",
+    "Do you think the presence of mold on Skittles would affect your perception of the brand?",
+    "How concerned would you be about your health if you accidentally ate a moldy Skittle?",
+    "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
   ],
-  "keyInsights": "**Subjectivity of Coolness**: Many participants emphasized that \"cool\" is subjective and can vary from person to person.; **Authenticity and Individuality**: Participants appreciated Ian Baime's uniqueness, authenticity, and willingness to be himself.; **Passion and Expertise**: Ian Baime's passion for his work, particularly in tech, sustainability, and storytelling, was seen as a cool factor.; **Mixed Opinions**: Opinions about Ian Baime's coolness were divided, with some participants finding him cool and others not.",
+  "keyInsights": "The majority of Gen Z users expressed disgust and concern upon finding mold on Skittles, with many stating they would not eat the candy if they knew some batches had mold. The presence of mold would also affect their perception of the brand, with many questioning the quality control and safety of the products. Users expected a refund or replacement if they purchased a bag of Skittles with mold on them.",
   "num_interviews": 10,
-  "num_questions": 3,
-  "observations": "**Creatives**: Participants like Ava Lee and Noah Brooks appreciated Ian Baime's artistic and musical side.; **Tech-Savvy**: Julian Sanchez and Ethan Thompson admired Ian Baime's coding skills and tech expertise.; **Environmentalists**: Mia Kim and Ava Lee valued Ian Baime's commitment to sustainability.; **Competitive Types**: Logan Walker and Emily Chen had mixed opinions, with some appreciating Ian Baime's confidence and others finding him unimpressive.",
+  "num_questions": 5,
+  "observations": "While most users shared similar reactions to finding mold on Skittles, some personas like Ava Morales and Charlotte Brown were more extreme in their responses, with Ava considering not eating Skittles at all and Charlotte opting for sustainable alternatives. In contrast, users like Julian Lee and Jackson Davis took a more analytical approach, considering the risks and consequences of eating moldy candy. Additionally, Lila Patel and Noah Hall highlighted the importance of social media in sharing their experiences and holding the company accountable.",
   "participants": [
     {
-      "header": "Ethan Thompson",
+      "header": "Ethan Kim",
       "id": 1,
       "interview": {
         "persona": {
           "age": 20,
-          "background": "Grew up in a multicultural community",
-          "communication_style": "informal",
+          "background": "grew up in a multicultural family",
+          "communication_style": "direct",
           "job": "Student",
-          "name": "Ethan Thompson",
+          "name": "Ethan Kim",
           "traits": [
             "curious",
             "adventurous",
-            "open-minded",
-            "tech-savvy"
+            "open-minded"
           ]
         },
         "responses": [
           {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen online, he seems like a pretty chill guy who's into some cool tech stuff. I've watched a few of his YouTube videos and he's got some sick coding skills, so I guess that's pretty cool. But, I mean, cool is subjective, right?",
-            "question": "Is Ian Baime cool?"
+            "answer": "That's super gross, I'd be pretty freaked out if I found mold on a Skittle I was about to eat. I'd definitely not eat it, and I'd probably check the rest of the bag to see if the mold was just isolated to that one Skittle. It's kinda ruining my craving for Skittles now, though.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
           },
           {
-            "answer": "Ian Baime seems cool because he's always tinkering with new gadgets and finding innovative ways to use tech, which is pretty impressive. I've seen him hack together some pretty sweet projects in his spare time, and it's inspiring to see someone so passionate about what they do. Plus, he's always down to share his knowledge and collaborate on new ideas, which makes him pretty chill to be around.",
-            "question": "What makes Ian Baime cool?"
+            "answer": "Honestly, that's kinda gross. I'd probably still eat Skittles, but I'd definitely check the batch number or the candy itself before devouring a handful - I'm not trying to risk getting sick. I'd be a bit more cautious, but I'm not gonna lie, I love Skittles too much to quit them cold turkey.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
           },
           {
-            "answer": "I think Ian Baime is cool because he's always pushing boundaries and trying new things, which is really inspiring to me. I've seen his videos and projects online, and the way he combines tech and creativity is pretty awesome. Plus, he's not afraid to take risks and experiment, which is something I try to do in my own life, too.",
-            "question": "Why do you think Ian Baime is cool?"
+            "answer": "Honestly, finding mold on Skittles would be a total turn-off for me - it's just gross. I'd definitely think twice about buying them again, and I'd probably start questioning the brand's quality control. It would take a lot for me to trust Skittles again after that.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably Google the symptoms and risks, and if I started feeling weird or nauseous, I'd consider hitting up the health center on campus to get checked out. It's not the end of the world, but still, moldy candy is not exactly what I'd call a healthy snack.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, that's super gross, so yeah, I'd definitely want a refund or a replacement - I didn't pay for moldy candy. I'd probably take it back to the store where I bought it and see what they can do for me. Hopefully, they'd take care of it and hook me up with a fresh bag of Skittles.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
           }
         ]
       },
       "limit": "Student",
-      "status": "curious, adventurous, open-minded, tech-savvy",
+      "status": "curious, adventurous, open-minded",
       "target": "20",
       "type": "Gen Z"
     },
     {
-      "header": "Liam Patel",
+      "header": "Lila Patel",
       "id": 2,
       "interview": {
         "persona": {
           "age": 22,
-          "background": "Has a strong online presence",
+          "background": "has a large following on Instagram",
           "communication_style": "expressive",
-          "job": "Freelance writer",
-          "name": "Liam Patel",
+          "job": "Social Media Influencer",
+          "name": "Lila Patel",
           "traits": [
-            "creative",
-            "independent",
             "confident",
+            "creative",
             "determined"
           ]
         },
         "responses": [
           {
-            "answer": "Honestly, I don't really know Ian Baime, but from what I've seen online, he seems like a pretty chill guy. I mean, he's got his own style and isn't afraid to speak his mind, which is kinda cool, I guess. But, cool is subjective, right, so I wouldn't go out of my way to say he's the coolest dude ever or anything.",
-            "question": "Is Ian Baime cool?"
+            "answer": "Ugh, that's literally my worst nightmare - I'd be totally grossed out if I found mold on a Skittle I was about to eat. I'd probably drop the whole bag and take a step back, questioning the entire candy industry at that point. I mean, who wants to eat something that's been growing its own ecosystem, right?",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
           },
           {
-            "answer": "Honestly, I don't really know who Ian Baime is, but if I had to take a guess, I'd say what makes him cool is probably his unique perspective and style - every creative person has their own vibe, right? Maybe he's got a bold approach to his work or a refreshing outlook on life. But hey, without knowing more about the guy, it's hard to say for sure.",
-            "question": "What makes Ian Baime cool?"
+            "answer": "Honestly, that's kinda gross - I mean, who wants to eat moldy Skittles? I'd probably still eat them, but I'd definitely check the batch number first and make sure they're fresh. It's not a deal-breaker for me, but I'm not trying to risk getting sick over some sour sugar rush either.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
           },
           {
-            "answer": "Honestly, I've never really met Ian Baime, but from what I've seen online, the guy's got a crazy passion for storytelling, which I can definitely vibe with. His writing style's pretty raw and unapologetic, and I appreciate that about him. Not gonna lie, though, I'm more about forging my own path than idolizing someone else's work.",
-            "question": "Why do you think Ian Baime is cool?"
+            "answer": "Honestly, finding mold on Skittles would totally freak me out and make me question the brand's quality control. I mean, I love Skittles, but if they can't even keep their candy fresh, it's hard to trust the brand. It would definitely make me think twice before posting about them on my socials.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, who knows what kind of bacteria or toxins are growing on that thing? I'd probably Google my symptoms and see if I need to head to urgent care, just to be safe. My mom always told me to check my food before eating it, and now I'm totally regretting not listening!",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, that's just gross - I'd totally expect a refund or a replacement, no question. I mean, who wants to eat moldy candy, right? I'd probably also take to social media to share my disappointing experience and make sure others are aware of the issue.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
           }
         ]
       },
-      "limit": "Freelance writer",
-      "status": "creative, independent, confident, determined",
+      "limit": "Social Media Influencer",
+      "status": "confident, creative, determined",
       "target": "22",
       "type": "Gen Z"
     },
     {
-      "header": "Ava Lee",
+      "header": "Julian Lee",
       "id": 3,
       "interview": {
         "persona": {
-          "age": 19,
-          "background": "Active in social justice movements",
-          "communication_style": "visual",
-          "job": "Part-time artist",
-          "name": "Ava Lee",
-          "traits": [
-            "imaginative",
-            "empathetic",
-            "spontaneous",
-            "environmentally conscious"
-          ]
-        },
-        "responses": [
-          {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a pretty chill guy who's really into sustainability, which I can definitely appreciate. I've seen his posts about reducing waste and living eco-friendly, and it's great to see someone passionate about making a difference. But, cool is subjective, right?",
-            "question": "Is Ian Baime cool?"
-          },
-          {
-            "answer": "I've met Ian a few times, and I think what makes him cool is how passionate he is about his work - he's always talking about innovative ways to reduce waste and live sustainably. It's pretty inspiring, but also a bit intimidating, you know? He's just so knowledgeable and driven, it's like, wow, I wanna be that invested in something too.",
-            "question": "What makes Ian Baime cool?"
-          },
-          {
-            "answer": "Ian Baime seems cool because he's always talking about sustainable living and it's really inspiring to see someone so passionate about saving the planet. I've seen his art pieces made from recycled materials and they're actually pretty amazing, it's like he's speaking my language. Plus, he's not afraid to think outside the box and try new things, which I think is really refreshing.",
-            "question": "Why do you think Ian Baime is cool?"
-          }
-        ]
-      },
-      "limit": "Part-time artist",
-      "status": "imaginative, empathetic, spontaneous, environmentally conscious",
-      "target": "19",
-      "type": "Gen Z"
-    },
-    {
-      "header": "Julian Sanchez",
-      "id": 4,
-      "interview": {
-        "persona": {
           "age": 21,
-          "background": "Participates in coding competitions",
-          "communication_style": "direct",
-          "job": "App developer",
-          "name": "Julian Sanchez",
+          "background": "taught himself to code at a young age",
+          "communication_style": "precise",
+          "job": "Software Engineer",
+          "name": "Julian Lee",
           "traits": [
             "analytical",
             "logical",
-            "detail-oriented",
-            "competitive"
+            "reserved"
           ]
         },
         "responses": [
           {
-            "answer": "Honestly, I don't really know Ian Baime, but from what I've seen online, he seems like a solid guy who knows his stuff about Android development. I wouldn't say he's \"cool\" in the classical sense, but he's definitely someone I'd want to pick his brain about coding. Not really my go-to definition of cool, but I guess he's alright.",
-            "question": "Is Ian Baime cool?"
+            "answer": "Honestly, I'd be pretty grossed out if I found mold on a Skittle I was about to eat. I mean, it's not like I expect my candy to be sterile or anything, but mold is just a clear sign that something's gone wrong. I'd probably just toss the whole bag and grab a new one, no point in risking it.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
           },
           {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he's got a pretty solid sense of humor and isn't afraid to speak his mind, which is kinda cool, I guess. I mean, he's not trying to impress anyone, he's just being himself, and that's refreshing. But, to be real, I've only interacted with him a few times, so my opinion is pretty limited.",
-            "question": "What makes Ian Baime cool?"
+            "answer": "Honestly, that's a bit of a turnoff - I mean, mold isn't exactly something you want to ingest. I'd probably still eat Skittles, but I'd definitely check the packaging and expiration dates more closely before consuming them. It's not a deal-breaker, but it's definitely a consideration.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
           },
           {
-            "answer": "Honestly, I don't really know Ian Baime, but from what I've seen, he seems like a chill guy who's really into tech, which is cool, I guess. I mean, we've had some decent conversations about coding and app development, and he's got some solid insights, so that's a plus. But, to be real, I'm not exactly sure what makes him \"cool\" beyond that.",
-            "question": "Why do you think Ian Baime is cool?"
+            "answer": "Honestly, finding mold on Skittles would be a major turnoff for me - it's a pretty basic expectation that the candy I eat is free from mold. I'd probably think twice before buying Skittles again, at least until I heard that the issue had been resolved. It's not like I'd boycott the brand forever, but it would definitely give me pause.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be a bit worried if I ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably monitor my health for the next day or so, keeping an eye out for any weird symptoms like stomach pain or nausea. It's not the end of the world, but I'd definitely be cautious and consider talking to a doctor if I started feeling off.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty disappointed if I found mold on my Skittles, so yeah, I'd expect a refund or a replacement. I mean, it's not like it's a complicated product, it's just candy, so quality control should be pretty straightforward. I'd probably just return them to the store and get a new bag, no big deal.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
           }
         ]
       },
-      "limit": "App developer",
-      "status": "analytical, logical, detail-oriented, competitive",
+      "limit": "Software Engineer",
+      "status": "analytical, logical, reserved",
       "target": "21",
       "type": "Gen Z"
     },
     {
-      "header": "Sophia Rodriguez",
+      "header": "Ava Morales",
+      "id": 4,
+      "interview": {
+        "persona": {
+          "age": 19,
+          "background": "comes from a family of artists",
+          "communication_style": "emotive",
+          "job": "Artist",
+          "name": "Ava Morales",
+          "traits": [
+            "imaginative",
+            "empathetic",
+            "spontaneous"
+          ]
+        },
+        "responses": [
+          {
+            "answer": "Ugh, that's so gross! I'd feel a mix of disappointment and disgust, like my excitement to eat that Skittle just got totally ruined. I'd probably drop it and wash my hands, feeling a bit queasy at the thought of almost eating mold - it's just so unappetizing!",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+          },
+          {
+            "answer": "Honestly, that's kinda gross - I don't think I could stomach eating Skittles if I knew some batches had mold on them. I mean, I love the sweet and tangy taste, but mold is just a hard pass for me. I'd probably stick to making art with them instead, like a colorful still life, rather than risking a stomachache.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+          },
+          {
+            "answer": "Honestly, it would totally freak me out if I found mold on my Skittles - it's like, a major trust breaker. I'd probably still love the brand, but I'd be way more cautious about checking the expiration dates and packaging before devouring them. It's not exactly the most inspiring thing to think about when you're trying to tap into your creativity, you know?",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold is just so gross and it can't be good for you, right? I'd probably worry that I'd get some kind of stomach bug or infection, and I'd definitely be keeping an eye on how my body reacts. I'd probably end up googling all the possible worst-case scenarios, too, which would just add to my anxiety.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Ugh, that's so gross! I would totally ask for a refund or a new bag, I mean, who wants to eat moldy Skittles? I'd probably take it back to the store and be like, \"Hey, can I get a fresh bag, please?\"",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+          }
+        ]
+      },
+      "limit": "Artist",
+      "status": "imaginative, empathetic, spontaneous",
+      "target": "19",
+      "type": "Gen Z"
+    },
+    {
+      "header": "Liam Chen",
       "id": 5,
       "interview": {
         "persona": {
           "age": 20,
-          "background": "Has a large following on social media",
-          "communication_style": "engaging",
-          "job": "Social media influencer",
-          "name": "Sophia Rodriguez",
-          "traits": [
-            "charismatic",
-            "outgoing",
-            "ambitious",
-            "authentic"
-          ]
-        },
-        "responses": [
-          {
-            "answer": "Honestly, I've met Ian Baime a few times, and he's got a certain vibe going on, but I'm not totally convinced he's cool, you know? He seems kinda try-hard, like he's really attempting to be this edgy, mysterious guy, but it comes off a bit forced. I mean, I've seen cooler, but hey, being cool is subjective, right?",
-            "question": "Is Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems cool because he's unapologetically himself and isn't afraid to speak his mind. I mean, it takes guts to be that raw and honest, you know? But, I'd need to get to know him better to say for sure what makes him truly cool.",
-            "question": "What makes Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I think Ian Baime is cool because he's unapologetically himself, you know? I've seen his content and he's got this chill, laid-back vibe that's super relatable, but at the same time, he's not afraid to speak his mind and share his passions. Plus, his sense of humor is everything - it's like, totally on point!",
-            "question": "Why do you think Ian Baime is cool?"
-          }
-        ]
-      },
-      "limit": "Social media influencer",
-      "status": "charismatic, outgoing, ambitious, authentic",
-      "target": "20",
-      "type": "Gen Z"
-    },
-    {
-      "header": "Mia Kim",
-      "id": 6,
-      "interview": {
-        "persona": {
-          "age": 22,
-          "background": "Has organized community events",
-          "communication_style": "persuasive",
-          "job": "Environmental activist",
-          "name": "Mia Kim",
-          "traits": [
-            "passionate",
-            "driven",
-            "compassionate",
-            "idealistic"
-          ]
-        },
-        "responses": [
-          {
-            "answer": "Honestly, I don't really know Ian Baime, but from what I've seen, he seems like a pretty laid-back guy who's into sustainability, which is definitely cool in my book. I mean, anyone who's passionate about saving the planet is a hero in my eyes, but I don't know him well enough to say if he's actually \"cool\" or not. He seems alright, I guess!",
-            "question": "Is Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I've met Ian a few times at climate rallies, and what I think makes him cool is his unwavering dedication to the cause - the guy's always speaking truth to power and holding leaders accountable. Plus, he's got this unapologetic energy that's pretty infectious. He's not afraid to get a little confrontational when it comes to fighting for the planet, and I respect that.",
-            "question": "What makes Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I think Ian Baime is cool because he's all about living simply and sustainably, which really resonates with me. I mean, have you seen his tiny house and the way he's reduced his waste to almost zero? It's super inspiring to see someone walking the walk like that.",
-            "question": "Why do you think Ian Baime is cool?"
-          }
-        ]
-      },
-      "limit": "Environmental activist",
-      "status": "passionate, driven, compassionate, idealistic",
-      "target": "22",
-      "type": "Gen Z"
-    },
-    {
-      "header": "Noah Brooks",
-      "id": 7,
-      "interview": {
-        "persona": {
-          "age": 19,
-          "background": "Performs at local venues",
-          "communication_style": "creative",
-          "job": "Musician",
-          "name": "Noah Brooks",
-          "traits": [
-            "expressive",
-            "emotional",
-            "intuitive",
-            "adaptable"
-          ]
-        },
-        "responses": [
-          {
-            "answer": "Honestly, I've only met Ian a few times, but he seems like a pretty chill dude - always down to earth and willing to lend a listening ear. I've seen him at a few gigs, and he's always vibing to the music, you know? I wouldn't say I know him super well, but from what I've seen, he's definitely got a cool, laid-back energy about him.",
-            "question": "Is Ian Baime cool?"
-          },
-          {
-            "answer": "Ian Baime's cool factor is all about his unapologetic individuality - the way he weaves together eclectic styles and sounds is seriously inspiring. I mean, have you seen him live? He's got this raw energy that's infectious, you know? It's like he's tapping into something deeper, and that's what makes him so magnetic.",
-            "question": "What makes Ian Baime cool?"
-          },
-          {
-            "answer": "Ian Baime's got this infectious energy, you know? I've seen him perform and he's just so in the zone, it's like he's speaking straight to your soul - it's really inspiring to watch. I think what makes him cool is how he's not afraid to be vulnerable and raw with his music, it's super relatable.",
-            "question": "Why do you think Ian Baime is cool?"
-          }
-        ]
-      },
-      "limit": "Musician",
-      "status": "expressive, emotional, intuitive, adaptable",
-      "target": "19",
-      "type": "Gen Z"
-    },
-    {
-      "header": "Charlotte Hall",
-      "id": 8,
-      "interview": {
-        "persona": {
-          "age": 21,
-          "background": "Has written for school newspapers",
-          "communication_style": "investigative",
-          "job": "Journalist",
-          "name": "Charlotte Hall",
-          "traits": [
-            "inquisitive",
-            "objective",
-            "resourceful",
-            "tenacious"
-          ]
-        },
-        "responses": [
-          {
-            "answer": "I've had the chance to interview Ian Baime a few times, and while he's definitely got a certain charm, I'm not sure I'd call him \"cool\" outright. He's got a quirky sense of humor and can be pretty witty, but sometimes his attempts at being funny fall a bit flat. Overall, I think he's more interesting than cool, if that makes sense.",
-            "question": "Is Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I've done some digging on Ian Baime, and from what I've gathered, he's got a pretty impressive track record as a journalist himself. What makes him cool, in my opinion, is his fearless approach to storytelling and his ability to tackle tough topics head-on. He's not afraid to ruffle a few feathers, which I think is pretty admirable, even if it doesn't always make him the most popular guy in the room.",
-            "question": "What makes Ian Baime cool?"
-          },
-          {
-            "answer": "Honestly, I've only met Ian Baime a handful of times, but from what I've seen, he's got a certain swagger to him that's hard to deny. As a journalist, I've learned to separate fact from fiction, and while Ian's definitely charming, I'm not entirely convinced he's as cool as everyone makes him out to be. Still, there's something about him that's piqued my interest, and I'd love to dig deeper to get a better sense of who he really is.",
-            "question": "Why do you think Ian Baime is cool?"
-          }
-        ]
-      },
-      "limit": "Journalist",
-      "status": "inquisitive, objective, resourceful, tenacious",
-      "target": "21",
-      "type": "Gen Z"
-    },
-    {
-      "header": "Logan Walker",
-      "id": 9,
-      "interview": {
-        "persona": {
-          "age": 20,
-          "background": "Plays on a college sports team",
+          "background": "has been playing sports since childhood",
           "communication_style": "assertive",
           "job": "Athlete",
-          "name": "Logan Walker",
+          "name": "Liam Chen",
           "traits": [
             "competitive",
             "disciplined",
-            "resilient",
-            "team-oriented"
+            "outgoing"
           ]
         },
         "responses": [
           {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a solid dude. I've heard he's pretty into his own thing, which is cool, I guess. I'm more focused on my game and my team, so I don't really have an opinion either way, you know?",
-            "question": "Is Ian Baime cool?"
+            "answer": "Ugh, that's disgusting! I'd be pretty grossed out if I found mold on a Skittle I was about to eat - I mean, who wants to put something funky like that in their body, especially when I'm trying to stay on top of my game. I'd definitely toss it and grab a new one, no way I'm risking getting sick over a candy.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
           },
           {
-            "answer": "Ian Baime's cool factor is pretty low in my book, to be honest. I mean, I don't really know the guy, but from what I've seen, he seems kinda awkward and not really my type of person. I'm all about being competitive and pushing myself to be the best, and I just don't get that vibe from him.",
-            "question": "What makes Ian Baime cool?"
+            "answer": "Honestly, that's kinda gross - I don't think I could still eat Skittles if I knew some batches had mold on them. I mean, I'm trying to keep my body in top shape for competitions, so putting moldy candy in my system is a definite no-go. I'd have to find a new snack to fuel my cravings.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
           },
           {
-            "answer": "Honestly, I don't really know Ian Baime that well, but from what I've seen, he seems like a chill guy who's really into his own thing. I respect that about him - he's not trying to be someone he's not, you know? He's just doing his own thing and that's pretty cool, I guess.",
-            "question": "Why do you think Ian Baime is cool?"
+            "answer": "Honestly, finding mold on Skittles would be a total turnoff for me - I mean, who wants to eat candy that's gone bad? It'd definitely make me question the brand's quality control and I'd probably think twice before buying them again. As an athlete, I've got to be careful about what I put in my body, so moldy Skittles are a hard pass for me.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty concerned if I accidentally ate a moldy Skittle - I mean, I'm an athlete, my body is my temple, and I don't want anything messing with my performance. I'd probably freak out a bit and hit up Google to see what kind of symptoms I should be looking out for. I'd definitely keep an eye on how I'm feeling and consider talking to my trainer or a doctor if I start to feel off.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, that's disgusting - I'd definitely want a refund or a fresh bag, no question. I mean, who wants to risk getting sick from eating moldy candy, right? I'd take it back to the store and expect them to hook me up with a new bag or my money back, that's just common sense.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
           }
         ]
       },
       "limit": "Athlete",
-      "status": "competitive, disciplined, resilient, team-oriented",
+      "status": "competitive, disciplined, outgoing",
       "target": "20",
       "type": "Gen Z"
     },
     {
-      "header": "Emily Chen",
-      "id": 10,
+      "header": "Sophia Rodriguez",
+      "id": 6,
       "interview": {
         "persona": {
           "age": 22,
-          "background": "Has started their own business",
-          "communication_style": "confident",
-          "job": "Entrepreneur",
-          "name": "Emily Chen",
+          "background": "has a strong interest in social justice",
+          "communication_style": "investigative",
+          "job": "Journalist",
+          "name": "Sophia Rodriguez",
           "traits": [
-            "innovative",
-            "risk-taker",
-            "strategic",
-            "results-driven"
+            "inquisitive",
+            "objective",
+            "persistent"
           ]
         },
         "responses": [
           {
-            "answer": "Honestly, I've only met Ian a few times, but from what I've seen, he's got a pretty dry sense of humor that can be kinda funny. I wouldn't say he's the coolest guy in the room, but he's definitely got his own vibe going on. I'm more about building my business empire than judging who's cool or not, though.",
-            "question": "Is Ian Baime cool?"
+            "answer": "Ugh, I'd be totally grossed out if I found mold on a Skittle I was about to eat - it's just not something you expect to see on your candy. I'd probably drop it immediately and question the packaging or storage, wondering how that even happened. Honestly, it would kind of ruin my snack time vibe.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
           },
           {
-            "answer": "Honestly, I don't really know Ian Baime, but from what I've heard, he's got a pretty bold sense of style and isn't afraid to speak his mind, which can be pretty cool, I guess. I mean, confidence and authenticity can be really attractive, but it also depends on how you carry yourself, you know? I'd need to meet him in person to really form an opinion, though.",
-            "question": "What makes Ian Baime cool?"
+            "answer": "Honestly, that's a bit of a turn-off for me - I mean, who wants to risk biting into a moldy Skittle? I'd probably still eat them, but I'd definitely be checking the expiration dates and packaging more closely, and maybe opting for a different candy if I'm being totally honest. The thought of mold on my sweets is just not something I can easily shake off.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
           },
           {
-            "answer": "Honestly, I think Ian Baime is cool because he's not afraid to challenge the status quo and try new things, which is something I really admire as an entrepreneur. His willingness to take risks and push boundaries is inspiring, and I love how he's always thinking outside the box. Plus, his passion is infectious, and being around him always gets me pumped up to tackle my own projects.",
-            "question": "Why do you think Ian Baime is cool?"
+            "answer": "Honestly, finding mold on Skittles would be a major turnoff for me - it's a serious concern for food safety and quality control. As a journalist, I've seen how incidents like this can damage a brand's reputation, and I think it would definitely affect my perception of the brand, making me question their manufacturing processes. It's not just about the candy itself, but about the trust you place in a brand to deliver a safe product.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold can be toxic, right? I'd probably Google the symptoms of mold poisoning and keep a close eye on how I'm feeling over the next few hours. Depending on how I react, I might even consider reaching out to my doctor or a medical hotline to get some advice.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty grossed out if I found mold on my Skittles, so yeah, I'd definitely expect a refund or a replacement - it's just basic quality control, you know? I'd probably reach out to the company and see what their policy is on defective products, and hopefully, they'd make it right. A replacement or refund seems like the least they could do, considering I paid good money for a product that's supposed to be safe to eat.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+          }
+        ]
+      },
+      "limit": "Journalist",
+      "status": "inquisitive, objective, persistent",
+      "target": "22",
+      "type": "Gen Z"
+    },
+    {
+      "header": "Mia Wong",
+      "id": 7,
+      "interview": {
+        "persona": {
+          "age": 21,
+          "background": "started her own business in college",
+          "communication_style": "persuasive",
+          "job": "Entrepreneur",
+          "name": "Mia Wong",
+          "traits": [
+            "ambitious",
+            "resourceful",
+            "risk-taker"
+          ]
+        },
+        "responses": [
+          {
+            "answer": "Ugh, that's disgusting! I'd be totally grossed out and would immediately throw the whole bag away - I don't want to risk eating something that's been contaminated. It's not like I can just pick out the moldy one and expect the rest to be fine, that's just not worth the risk.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+          },
+          {
+            "answer": "Honestly, that's kinda gross - I'd probably still eat Skittles, but I'd be super cautious about checking the expiration dates and packaging for any signs of damage. I'm not trying to be a hero or anything, but at the same time, I'm not about to let a little risk hold me back from enjoying my favorite candy. I'd just take my chances and hope I don't get a bad batch.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+          },
+          {
+            "answer": "Honestly, finding mold on Skittles would be a total turnoff for me - it's a major red flag for quality control. As someone who's all about taking calculated risks, I'd think twice about investing in or partnering with a brand that can't even get the basics right. It's not just about the candy itself, it's about the reputation and trust that comes with a brand name.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, mold is gross and can be toxic, right? I'd probably Google the symptoms of mold poisoning and keep an eye on how I'm feeling, just in case. But, I'm not gonna lie, I'd also be low-key worried that it's gonna ruin my whole day and throw off my hustle.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Ugh, that's gross. I'd definitely expect a refund or a replacement, no question - I didn't pay for moldy candy. I'd probably reach out to the store where I bought them and see what their return policy is, hopefully, they'll hook me up with a fresh bag.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
           }
         ]
       },
       "limit": "Entrepreneur",
-      "status": "innovative, risk-taker, strategic, results-driven",
+      "status": "ambitious, resourceful, risk-taker",
+      "target": "21",
+      "type": "Gen Z"
+    },
+    {
+      "header": "Noah Hall",
+      "id": 8,
+      "interview": {
+        "persona": {
+          "age": 19,
+          "background": "has been playing music since he was a teenager",
+          "communication_style": "creative",
+          "job": "Musician",
+          "name": "Noah Hall",
+          "traits": [
+            "expressive",
+            "passionate",
+            "quirky"
+          ]
+        },
+        "responses": [
+          {
+            "answer": "Ugh, that's totally gross! I'd be super bummed if I found mold on a Skittle, it's like, my favorite snack to munch on while I'm jamming out on my guitar. I'd probably just toss it and grab another one, but it'd definitely kill my vibe for a sec.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+          },
+          {
+            "answer": "Honestly, that's kinda gross, you know? I'd probably still eat Skittles, but I'd be checking each one like a paranoid freak before popping it in my mouth. I mean, I love Skittles, but mold is a major vibe killer, you feel me?",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+          },
+          {
+            "answer": "Honestly, finding mold on Skittles would be a total bummer, you know? It'd make me question the whole brand, like, how could they let that happen? I'd still jam out to the sweet tunes, but my trust in Skittles would definitely be, like, tainted, you feel?",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I ate a moldy Skittle - I mean, mold is like, a total vibe killer, you know? I'd probably worry that I'd get some gnarly stomach issues or something, and that would totally throw off my music gigs for the week. I'd likely end up googling \"what happens if you eat moldy candy\" and freaking myself out even more.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Ugh, that's gross! I'd definitely want a refund or a fresh bag, you know, one that's not gonna make me sick. I mean, I'm all about taking risks with my music, but not with my snacks, that's just not cool.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+          }
+        ]
+      },
+      "limit": "Musician",
+      "status": "expressive, passionate, quirky",
+      "target": "19",
+      "type": "Gen Z"
+    },
+    {
+      "header": "Charlotte Brown",
+      "id": 9,
+      "interview": {
+        "persona": {
+          "age": 20,
+          "background": "has been involved in environmental causes since high school",
+          "communication_style": "convincing",
+          "job": "Environmental Activist",
+          "name": "Charlotte Brown",
+          "traits": [
+            "compassionate",
+            "dedicated",
+            "outspoken"
+          ]
+        },
+        "responses": [
+          {
+            "answer": "Ugh, that's disgusting! I'd be totally grossed out, to be honest - I mean, who wants to eat moldy candy? It's not just the health risks that bother me, but also the fact that it's a sign of waste and poor production practices, which is really frustrating as an environmental activist.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+          },
+          {
+            "answer": "Honestly, no way would I still eat Skittles if I knew some batches had mold on them - that's just gross and unhealthy. As someone who's passionate about the environment and our well-being, I'd rather opt for sustainable and safe alternatives, like organic fruit or locally-made candies. It's all about making conscious choices, you know?",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+          },
+          {
+            "answer": "Honestly, if I found out that Skittles had mold on them, I'd be pretty grossed out and it would definitely affect my perception of the brand. As someone who cares deeply about the environment and the impact of consumerism, it's not just about the health risks - it's also about the lack of accountability and transparency from the company. It would make me question the brand's values and priorities, you know?",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty freaked out if I accidentally ate a moldy Skittle - I mean, who knows what kind of toxins or bacteria are growing on that thing? As someone who's passionate about the environment and healthy living, the thought of putting something so contaminated in my body is really unsettling. I'd probably try to induce vomiting or drink a ton of water to flush it out, and then head to the doctor just in case.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, I'd be super grossed out if I found mold on my Skittles, but I'd probably ask for a replacement or a refund, depending on the store's policy. As someone who cares deeply about the environment, I'd also want to know what measures the company is taking to reduce waste and prevent this kind of thing from happening in the future. I'd likely take to social media to share my experience and encourage others to hold the company accountable for their quality control and sustainability practices.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+          }
+        ]
+      },
+      "limit": "Environmental Activist",
+      "status": "compassionate, dedicated, outspoken",
+      "target": "20",
+      "type": "Gen Z"
+    },
+    {
+      "header": "Jackson Davis",
+      "id": 10,
+      "interview": {
+        "persona": {
+          "age": 22,
+          "background": "comes from a family of educators",
+          "communication_style": "clear",
+          "job": "Teacher",
+          "name": "Jackson Davis",
+          "traits": [
+            "patient",
+            "supportive",
+            "organized"
+          ]
+        },
+        "responses": [
+          {
+            "answer": "Ugh, that's disgusting! I'd be pretty grossed out if I found mold on a Skittle, to be honest - it's not exactly what you want to see when you're about to eat something. I'd definitely toss it in the trash and wash my hands, no way I'm taking a chance on eating something that's been growing mold.",
+            "question": "How would you feel if you found mold on a Skittle you were about to eat?"
+          },
+          {
+            "answer": "Honestly, that's a bit of a turn-off for me - I mean, who wants to eat candy with mold on it? I think I'd still eat Skittles, but I'd definitely check the packaging and expiration dates more closely before buying them. It's not a deal-breaker, but it's definitely a concern that would make me more cautious about my Skittles snacking.",
+            "question": "Would you still eat Skittles if you knew some batches had mold on them?"
+          },
+          {
+            "answer": "Honestly, finding mold on Skittles would be a total turn-off for me - it's just not something you expect from a brand you trust. I think it would definitely make me question the quality control and safety of their products, which would be a bummer because I've always been a fan of Skittles. It would take some serious effort from the company to regain my trust after something like that.",
+            "question": "Do you think the presence of mold on Skittles would affect your perception of the brand?"
+          },
+          {
+            "answer": "Honestly, I'd be a bit worried if I ate a moldy Skittle - I mean, mold isn't exactly something you want in your system. I'd probably keep an eye on how I'm feeling over the next day or so, just to make sure I don't start experiencing any weird symptoms. But I'm not one to freak out easily, so I'd likely just drink some water and hope for the best.",
+            "question": "How concerned would you be about your health if you accidentally ate a moldy Skittle?"
+          },
+          {
+            "answer": "Honestly, I'd be pretty grossed out if I opened a bag of Skittles and found mold, so yeah, I'd definitely expect a refund or a replacement. I mean, that's just not something you want to see in your candy, and it's a safety issue too. I'd probably reach out to the store where I bought them or the manufacturer to get it sorted out.",
+            "question": "Would you expect a refund or replacement if you purchased a bag of Skittles with mold on them?"
+          }
+        ]
+      },
+      "limit": "Teacher",
+      "status": "patient, supportive, organized",
       "target": "22",
       "type": "Gen Z"
     }
@@ -675,138 +819,495 @@
   "personas": [
     {
       "age": 20,
-      "background": "Grew up in a multicultural community",
-      "communication_style": "informal",
+      "background": "grew up in a multicultural family",
+      "communication_style": "direct",
       "job": "Student",
-      "name": "Ethan Thompson",
+      "name": "Ethan Kim",
       "traits": [
         "curious",
         "adventurous",
-        "open-minded",
-        "tech-savvy"
+        "open-minded"
       ]
     },
     {
       "age": 22,
-      "background": "Has a strong online presence",
+      "background": "has a large following on Instagram",
       "communication_style": "expressive",
-      "job": "Freelance writer",
-      "name": "Liam Patel",
+      "job": "Social Media Influencer",
+      "name": "Lila Patel",
       "traits": [
-        "creative",
-        "independent",
         "confident",
+        "creative",
         "determined"
       ]
     },
     {
-      "age": 19,
-      "background": "Active in social justice movements",
-      "communication_style": "visual",
-      "job": "Part-time artist",
-      "name": "Ava Lee",
-      "traits": [
-        "imaginative",
-        "empathetic",
-        "spontaneous",
-        "environmentally conscious"
-      ]
-    },
-    {
       "age": 21,
-      "background": "Participates in coding competitions",
-      "communication_style": "direct",
-      "job": "App developer",
-      "name": "Julian Sanchez",
+      "background": "taught himself to code at a young age",
+      "communication_style": "precise",
+      "job": "Software Engineer",
+      "name": "Julian Lee",
       "traits": [
         "analytical",
         "logical",
-        "detail-oriented",
-        "competitive"
-      ]
-    },
-    {
-      "age": 20,
-      "background": "Has a large following on social media",
-      "communication_style": "engaging",
-      "job": "Social media influencer",
-      "name": "Sophia Rodriguez",
-      "traits": [
-        "charismatic",
-        "outgoing",
-        "ambitious",
-        "authentic"
-      ]
-    },
-    {
-      "age": 22,
-      "background": "Has organized community events",
-      "communication_style": "persuasive",
-      "job": "Environmental activist",
-      "name": "Mia Kim",
-      "traits": [
-        "passionate",
-        "driven",
-        "compassionate",
-        "idealistic"
+        "reserved"
       ]
     },
     {
       "age": 19,
-      "background": "Performs at local venues",
-      "communication_style": "creative",
-      "job": "Musician",
-      "name": "Noah Brooks",
+      "background": "comes from a family of artists",
+      "communication_style": "emotive",
+      "job": "Artist",
+      "name": "Ava Morales",
       "traits": [
-        "expressive",
-        "emotional",
-        "intuitive",
-        "adaptable"
-      ]
-    },
-    {
-      "age": 21,
-      "background": "Has written for school newspapers",
-      "communication_style": "investigative",
-      "job": "Journalist",
-      "name": "Charlotte Hall",
-      "traits": [
-        "inquisitive",
-        "objective",
-        "resourceful",
-        "tenacious"
+        "imaginative",
+        "empathetic",
+        "spontaneous"
       ]
     },
     {
       "age": 20,
-      "background": "Plays on a college sports team",
+      "background": "has been playing sports since childhood",
       "communication_style": "assertive",
       "job": "Athlete",
-      "name": "Logan Walker",
+      "name": "Liam Chen",
       "traits": [
         "competitive",
         "disciplined",
-        "resilient",
-        "team-oriented"
+        "outgoing"
       ]
     },
     {
       "age": 22,
-      "background": "Has started their own business",
-      "communication_style": "confident",
-      "job": "Entrepreneur",
-      "name": "Emily Chen",
+      "background": "has a strong interest in social justice",
+      "communication_style": "investigative",
+      "job": "Journalist",
+      "name": "Sophia Rodriguez",
       "traits": [
-        "innovative",
-        "risk-taker",
-        "strategic",
-        "results-driven"
+        "inquisitive",
+        "objective",
+        "persistent"
+      ]
+    },
+    {
+      "age": 21,
+      "background": "started her own business in college",
+      "communication_style": "persuasive",
+      "job": "Entrepreneur",
+      "name": "Mia Wong",
+      "traits": [
+        "ambitious",
+        "resourceful",
+        "risk-taker"
+      ]
+    },
+    {
+      "age": 19,
+      "background": "has been playing music since he was a teenager",
+      "communication_style": "creative",
+      "job": "Musician",
+      "name": "Noah Hall",
+      "traits": [
+        "expressive",
+        "passionate",
+        "quirky"
+      ]
+    },
+    {
+      "age": 20,
+      "background": "has been involved in environmental causes since high school",
+      "communication_style": "convincing",
+      "job": "Environmental Activist",
+      "name": "Charlotte Brown",
+      "traits": [
+        "compassionate",
+        "dedicated",
+        "outspoken"
+      ]
+    },
+    {
+      "age": 22,
+      "background": "comes from a family of educators",
+      "communication_style": "clear",
+      "job": "Teacher",
+      "name": "Jackson Davis",
+      "traits": [
+        "patient",
+        "supportive",
+        "organized"
       ]
     }
   ],
-  "research_question": "is Ian Baime cool",
-  "synthesis": "**Key Themes:**\n1. **Subjectivity of Coolness**: Many participants emphasized that \"cool\" is subjective and can vary from person to person.\n2. **Authenticity and Individuality**: Participants appreciated Ian Baime's uniqueness, authenticity, and willingness to be himself.\n3. **Passion and Expertise**: Ian Baime's passion for his work, particularly in tech, sustainability, and storytelling, was seen as a cool factor.\n4. **Mixed Opinions**: Opinions about Ian Baime's coolness were divided, with some participants finding him cool and others not.\n\n**Diverse Perspectives:**\n1. **Creatives**: Participants like Ava Lee and Noah Brooks appreciated Ian Baime's artistic and musical side.\n2. **Tech-Savvy**: Julian Sanchez and Ethan Thompson admired Ian Baime's coding skills and tech expertise.\n3. **Environmentalists**: Mia Kim and Ava Lee valued Ian Baime's commitment to sustainability.\n4. **Competitive Types**: Logan Walker and Emily Chen had mixed opinions, with some appreciating Ian Baime's confidence and others finding him unimpressive.\n\n**Pain Points & Opportunities:**\n1. **Lack of Familiarity**: Many participants didn't know Ian Baime well, making it difficult to form a strong opinion.\n2. **Perceived Try-Hard Behavior**: Some participants, like Sophia Rodriguez, felt that Ian Baime came across as trying too hard to be cool.\n3. **Opportunity for Authentic Connection**: Participants appreciated Ian Baime's authenticity and individuality, suggesting that he could build stronger connections by being himself.\n\n**Actionable Recommendations:**\n1. **Emphasize Authenticity**: Ian Baime should continue to be his authentic self, as this is a key factor in his perceived coolness.\n2. **Showcase Expertise**: Highlighting his passion and expertise in areas like tech, sustainability, and storytelling could help build a stronger reputation.\n3. **Engage with Diverse Audiences**: Ian Baime could benefit from interacting with people from different backgrounds and interests to build a more nuanced understanding of what makes him cool.\n4. **Don't Try Too Hard**: Ian Baime should avoid coming across as trying too hard to be cool, as this can be off-putting to some people.",
-  "takeaways": "**Lack of Familiarity**: Many participants didn't know Ian Baime well, making it difficult to form a strong opinion.; **Perceived Try-Hard Behavior**: Some participants, like Sophia Rodriguez, felt that Ian Baime came across as trying too hard to be cool.; **Opportunity for Authentic Connection**: Participants appreciated Ian Baime's authenticity and individuality, suggesting that he could build stronger connections by being himself.; **Emphasize Authenticity**: Ian Baime should continue to be his authentic self, as this is a key factor in his perceived coolness.; **Showcase Expertise**: Highlighting his passion and expertise in areas like tech, sustainability, and storytelling could help build a stronger reputation.; **Engage with Diverse Audiences**: Ian Baime could benefit from interacting with people from different backgrounds and interests to build a more nuanced understanding of what makes him cool.; **Don't Try Too Hard**: Ian Baime should avoid coming across as trying too hard to be cool, as this can be off-putting to some people.",
+  "research_question": "how would users feel about skittles with mold?",
+  "start_time": "2025-08-12T06:51:12.241494Z",
+  "synthesis": "**KEY THEMES**: The majority of Gen Z users expressed disgust and concern upon finding mold on Skittles, with many stating they would not eat the candy if they knew some batches had mold. The presence of mold would also affect their perception of the brand, with many questioning the quality control and safety of the products. Users expected a refund or replacement if they purchased a bag of Skittles with mold on them.\n\n**DIVERSE PERSPECTIVES**: While most users shared similar reactions to finding mold on Skittles, some personas like Ava Morales and Charlotte Brown were more extreme in their responses, with Ava considering not eating Skittles at all and Charlotte opting for sustainable alternatives. In contrast, users like Julian Lee and Jackson Davis took a more analytical approach, considering the risks and consequences of eating moldy candy. Additionally, Lila Patel and Noah Hall highlighted the importance of social media in sharing their experiences and holding the company accountable.\n\n**PAIN POINTS & OPPORTUNITIES**: A major pain point for users was the risk of eating moldy candy, which could lead to health concerns and a loss of trust in the brand. However, this also presented an opportunity for the company to improve their quality control measures and increase transparency, which could lead to increased customer loyalty and trust. Furthermore, users like Mia Wong and Sophia Rodriguez suggested that the company could take steps to reduce waste and prevent mold growth, such as improving packaging or storage practices.\n\n**ACTIONABLE RECOMMENDATIONS**: To address the concerns of Gen Z users, the company should prioritize improving quality control measures to prevent mold growth on Skittles, increase transparency about their manufacturing processes, and provide clear refund or replacement policies for customers who purchase moldy candy. Additionally, the company could consider implementing sustainable practices, such as eco-friendly packaging or sourcing, to appeal to environmentally-conscious consumers like Charlotte Brown. By taking these steps, the company can regain the trust of their customers and maintain a positive brand image.",
+  "takeaways": "To address the concerns of Gen Z users, the company should prioritize improving quality control measures to prevent mold growth on Skittles, increase transparency about their manufacturing processes, and provide clear refund or replacement policies for customers who purchase moldy candy. Additionally, the company could consider implementing sustainable practices, such as eco-friendly packaging or sourcing, to appeal to environmentally-conscious consumers like Charlotte Brown. By taking these steps, the company can regain the trust of their customers and maintain a positive brand image.",
   "target_demographic": "Gen Z",
-  "timestamp": "2025-08-10T22:40:01.036924"
+  "timeline": [
+    {
+      "count": 5,
+      "timestamp": "2025-08-12T06:51:12.501518Z",
+      "type": "questions_generated"
+    },
+    {
+      "count": 10,
+      "timestamp": "2025-08-12T06:51:12.891487Z",
+      "type": "personas_generated"
+    },
+    {
+      "persona_index": 0,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:13.459925Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 0,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:13.715685Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 0,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:13.877313Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 0,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:14.052674Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 0,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:51:14.220233Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 0,
+      "timestamp": "2025-08-12T06:51:14.220249Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 1,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:14.380832Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 1,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:14.586729Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 1,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:15.455661Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 1,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:15.631589Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 1,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:51:15.778752Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 1,
+      "timestamp": "2025-08-12T06:51:15.778764Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 2,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:16.802564Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 2,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:16.984902Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 2,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:17.189025Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 2,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:17.368241Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 2,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:51:17.755081Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 2,
+      "timestamp": "2025-08-12T06:51:17.755101Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 3,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:18.745148Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 3,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:18.922482Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 3,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:19.106132Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 3,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:19.283679Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 3,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:51:19.431595Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 3,
+      "timestamp": "2025-08-12T06:51:19.431607Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 4,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:19.605039Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 4,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:20.480181Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 4,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:20.657154Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 4,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:21.038455Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 4,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:51:21.196024Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 4,
+      "timestamp": "2025-08-12T06:51:21.196035Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 5,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:51:21.367355Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 5,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:51:21.554751Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 5,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:51:22.408703Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 5,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:51:22.626092Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 5,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:52:00.950286Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 5,
+      "timestamp": "2025-08-12T06:52:00.950303Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 6,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:52:01.118418Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 6,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:52:01.366598Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 6,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:52:01.545200Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 6,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:52:01.726054Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 6,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:52:02.679253Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 6,
+      "timestamp": "2025-08-12T06:52:02.679266Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 7,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:52:02.842110Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 7,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:52:03.355536Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 7,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:52:03.519811Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 7,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:52:03.709379Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 7,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:52:03.858167Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 7,
+      "timestamp": "2025-08-12T06:52:03.858182Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 8,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:52:04.961466Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 8,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:52:05.131519Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 8,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:52:05.321081Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 8,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:52:05.514180Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 8,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:52:05.690720Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 8,
+      "timestamp": "2025-08-12T06:52:05.690730Z",
+      "type": "interview_completed"
+    },
+    {
+      "persona_index": 9,
+      "question_index": 0,
+      "timestamp": "2025-08-12T06:52:06.610706Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 9,
+      "question_index": 1,
+      "timestamp": "2025-08-12T06:52:06.792543Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 9,
+      "question_index": 2,
+      "timestamp": "2025-08-12T06:52:07.005866Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 9,
+      "question_index": 3,
+      "timestamp": "2025-08-12T06:52:07.189144Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 9,
+      "question_index": 4,
+      "timestamp": "2025-08-12T06:52:07.360366Z",
+      "type": "answer"
+    },
+    {
+      "persona_index": 9,
+      "timestamp": "2025-08-12T06:52:07.360378Z",
+      "type": "interview_completed"
+    },
+    {
+      "timestamp": "2025-08-12T06:52:07.953311Z",
+      "type": "synthesis_generated"
+    }
+  ],
+  "timestamp": "2025-08-12T06:52:07.953697"
 }

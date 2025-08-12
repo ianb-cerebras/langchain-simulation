@@ -35,7 +35,9 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
             first_two = ". ".join([s for s in section_content if s][:2]).strip()
             if first_two and not first_two.endswith("."):
                 first_two += "."
-            insights[current_section] = first_two
+            # Only set the section once to avoid accidental overwrites/doubling
+            if not insights.get(current_section):
+                insights[current_section] = first_two
         section_content = []
 
     def _sanitize(text: str) -> str:
@@ -70,12 +72,16 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
             "POINTS OF OBSERVATIONS",
             "OBSERVATION POINTS",
         ]
-        take_markers = [
-            "ACTIONABLE RECOMMENDATIONS",
-            "RECOMMENDATIONS",
+        # Route pain/opportunities to observations (to avoid doubling with takeaways)
+        pain_markers = [
             "PAIN POINTS & OPPORTUNITIES",
             "PAIN POINTS",
             "OPPORTUNITIES",
+        ]
+        # Only true takeaways/recommendations map to takeaways
+        recommendation_markers = [
+            "ACTIONABLE RECOMMENDATIONS",
+            "RECOMMENDATIONS",
             "KEY TAKEAWAYS",
             "TAKEAWAYS",
             "BIG TAKEAWAYS",
@@ -87,9 +93,9 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
         section: Optional[str] = None
         if find_match(key_markers):
             section = "keyInsights"
-        elif find_match(obs_markers):
+        elif find_match(obs_markers) or find_match(pain_markers):
             section = "observations"
-        elif find_match(take_markers):
+        elif find_match(recommendation_markers):
             section = "takeaways"
 
         if section is None:

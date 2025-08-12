@@ -112,6 +112,7 @@ export default function ConfigPage() {
               placeholder="How would users feel about a pink iPhone?"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
+              className="bg-white dark:bg-input/30"
             />
           </div>
 
@@ -125,6 +126,7 @@ export default function ConfigPage() {
               placeholder="Gen Z"
               value={project}
               onChange={(e) => setProject(e.target.value)}
+              className="bg-white dark:bg-input/30"
             />
           </div>
 
