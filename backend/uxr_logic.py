@@ -160,22 +160,50 @@ def persona_generation_node(state: InterviewState) -> Dict:
 
             # Normalize possible formatting issues from the model
             normalized_output = raw_output
-            # If model returned JSON string, parse it
+
+            # 1) If we got a Pydantic model instance back, convert to a dict
+            try:
+                if hasattr(normalized_output, "model_dump") and callable(normalized_output.model_dump):
+                    normalized_output = normalized_output.model_dump()
+            except Exception:
+                # Best-effort; continue with other normalizations
+                pass
+
+            # 2) If we got a LangChain message or object with a string 'content', try JSON-parsing that
+            if not isinstance(normalized_output, (dict, list, str)) and hasattr(normalized_output, "content"):
+                content = getattr(normalized_output, "content")
+                if isinstance(content, str):
+                    try:
+                        normalized_output = json.loads(content)
+                    except Exception:
+                        # If it's not valid JSON, leave as-is and let validation fail gracefully
+                        pass
+
+            # 3) If model returned JSON string, parse it
             if isinstance(normalized_output, str):
                 try:
                     normalized_output = json.loads(normalized_output)
                 except Exception:
+                    # Not JSON; keep as-is, validation will handle
                     pass
-            # If dict-like, strip whitespace and normalize key casing
+
+            # 4) If dict-like, strip whitespace and normalize key casing
             if isinstance(normalized_output, dict):
                 # Strip spaces around keys
                 normalized_keys = {str(k).strip(): v for k, v in normalized_output.items()}
-                # Handle capitalization variations
-                lower_map = {str(k).strip().lower(): k for k in normalized_keys.keys()}
-                if "personas" not in normalized_keys:
-                    if "personas" in lower_map:
-                        original_key = lower_map["personas"]
-                        normalized_keys["personas"] = normalized_keys.pop(original_key)
+                # Handle capitalization or stray quotes variations (e.g., '"personas"')
+                cleaned_key_map = {}
+                for k in list(normalized_keys.keys()):
+                    cleaned = str(k).strip().strip("\"'")
+                    if cleaned != k:
+                        normalized_keys[cleaned] = normalized_keys.pop(k)
+                    cleaned_key_map[cleaned.lower()] = cleaned
+
+                # Ensure we have the exact 'personas' key if a variant exists
+                if "personas" not in normalized_keys and "personas" in cleaned_key_map:
+                    original_key = cleaned_key_map["personas"]
+                    normalized_keys["personas"] = normalized_keys.pop(original_key)
+
                 normalized_output = normalized_keys
 
             validated = PersonasList.model_validate(normalized_output)
@@ -196,11 +224,19 @@ def persona_generation_node(state: InterviewState) -> Dict:
                 "all_interviews": [],
             }
 
-        except (ValidationError, ValueError, TypeError) as e:
+        except (ValidationError, ValueError, TypeError, KeyError) as e:
             print(f"❌ Attempt {attempt+1} failed: {e}")
-            print(raw_output)
+            # Log raw output for diagnostics; avoid crashing on repr issues
+            try:
+                print(raw_output)
+            except Exception:
+                pass
             if attempt == max_retries - 1:
-                raise RuntimeError(f"❗️Failed after {max_retries} attempts")
+                # Raise a clearer error to the API caller
+                raise RuntimeError(
+                    "Failed to generate personas in valid format after multiple attempts. "
+                    "Please try again or adjust the prompt."
+                )
 
 
 interview_prompt = (
