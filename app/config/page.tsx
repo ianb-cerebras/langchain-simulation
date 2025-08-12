@@ -81,8 +81,8 @@ export default function ConfigPage() {
     <div className="flex min-h-screen items-center justify-center">
       <Card className="w-full max-w-md space-y-6 shadow-md">
         <CardHeader>
-          <CardTitle className="text-xl">Simulation Configuration</CardTitle>
-          <CardDescription>Enter the details of your simulation</CardDescription>
+          <CardTitle className="text-xl">User Research Simulation</CardTitle>
+          <CardDescription>Answer your big questions by simulating your UX research</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-6">
           {/* Cerebras API Key */}

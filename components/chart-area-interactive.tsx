@@ -227,8 +227,14 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
     return chartData;
   }, [simulationData]);
 
+  // Determine if current dataset is the simulation bucketed series (has 't')
+  const isSimulationSeries = React.useMemo(() => {
+    const first = (chartDataToUse as any[])[0]
+    return first && Object.prototype.hasOwnProperty.call(first, "t")
+  }, [chartDataToUse])
+
   const filteredData = React.useMemo(() => {
-    if (simulationData) return chartDataToUse
+    if (isSimulationSeries) return chartDataToUse
     return (chartDataToUse as Array<{ date: string; desktop: number; mobile: number }>).filter(
       (item) => {
         const date = new Date(item.date)
@@ -244,7 +250,7 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
         return date >= startDate
       }
     )
-  }, [chartDataToUse, simulationData, timeRange])
+  }, [chartDataToUse, isSimulationSeries, timeRange])
 
   return (
     <Card className="@container/card">
@@ -265,7 +271,7 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
           </span>
         </CardDescription>
         <CardAction>
-          {!simulationData && (
+          {!isSimulationSeries && (
             <Select value={timeRange} onValueChange={setTimeRange}>
               <SelectTrigger
                 className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
@@ -292,10 +298,10 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
           config={React.useMemo(() => ({
-            visitors: { label: simulationData ? "Simulation" : "Visitors" },
-            desktop: { label: simulationData ? "Questions" : "Desktop", color: "var(--primary)" },
-            mobile: { label: simulationData ? "Interviews" : "Mobile", color: "var(--primary)" },
-          }), [simulationData])}
+            visitors: { label: isSimulationSeries ? "Simulation" : "Visitors" },
+            desktop: { label: isSimulationSeries ? "Questions" : "Desktop", color: "var(--primary)" },
+            mobile: { label: isSimulationSeries ? "Interviews" : "Mobile", color: "var(--primary)" },
+          }), [isSimulationSeries])}
           className="aspect-auto h-[250px] w-full"
         >
           <AreaChart data={filteredData}>
@@ -327,13 +333,13 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
             </defs>
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey={simulationData ? ("t" as const) : ("date" as const)}
+              dataKey={isSimulationSeries ? ("t" as const) : ("date" as const)}
               tickLine={false}
               axisLine={false}
               tickMargin={8}
               minTickGap={32}
               tickFormatter={(value) => {
-                if (simulationData) {
+                if (isSimulationSeries) {
                   return `${formatSeconds(Number(value))}`
                 }
                 const date = new Date(value)
@@ -351,7 +357,7 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    if (simulationData) {
+                    if (isSimulationSeries) {
                       return `t+${formatSeconds(Number(value))}`
                     }
                     const d = new Date(value)

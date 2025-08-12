@@ -384,7 +384,7 @@ def interview_node(state: InterviewState) -> Dict:
 
 
 synthesis_prompt_template = (
-    """Analyze these {num_interviews} user interviews about "{research_question}" among {target_demographic} and concise yet comprehensive analysis:
+    """Analyze these {num_interviews} user interviews about "{research_question}" among {target_demographic} and concise yet comprehensive analysis. Keep each section to 3 sentences each:
 
 1. KEY THEMES: What patterns and common themes emerged across all interviews? Look for similarities in responses, shared concerns, and recurring topics.
 

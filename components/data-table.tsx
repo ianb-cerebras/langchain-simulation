@@ -47,7 +47,6 @@ import {
   VisibilityState,
 } from "@tanstack/react-table"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
-import { toast } from "sonner"
 import { z } from "zod"
 
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -70,13 +69,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
@@ -203,77 +196,17 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     accessorKey: "target",
     header: () => <div className="w-full text-center">Age</div>,
     cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          })
-        }}
-      >
-        <Label htmlFor={`${row.original.id}-target`} className="sr-only">
-          Target
-        </Label>
-        <Input
-          className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-center shadow-none focus-visible:border dark:bg-transparent"
-          defaultValue={row.original.target}
-          id={`${row.original.id}-target`}
-        />
-      </form>
+      <div className="text-center">{row.original.target}</div>
     ),
   },
   {
     accessorKey: "limit",
     header: () => <div className="w-full text-left">Occupation</div>,
     cell: ({ row }) => (
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
-          })
-        }}
-      >
-        <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Limit
-        </Label>
-        <Input
-          className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-24 border-transparent bg-transparent text-left shadow-none focus-visible:border dark:bg-transparent"
-          defaultValue={row.original.limit}
-          id={`${row.original.id}-limit`}
-        />
-      </form>
+      <div className="text-left">{row.original.limit}</div>
     ),
   },
 
-  {
-    id: "actions",
-    cell: () => (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            variant="ghost"
-            className="data-[state=open]:bg-muted text-muted-foreground flex size-8"
-            size="icon"
-          >
-            <IconDotsVertical />
-            <span className="sr-only">Open menu</span>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
-  },
 ]
 
 function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {

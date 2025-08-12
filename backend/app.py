@@ -37,6 +37,15 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
             insights[current_section] = first_two
         section_content = []
 
+    def _sanitize(text: str) -> str:
+        # Remove bold/italic markdown and trailing duplicate punctuation
+        cleaned = text.replace("**", "").replace("__", "")
+        cleaned = cleaned.strip()
+        # Collapse repeated terminal punctuation like '..' or '!!'
+        while cleaned.endswith("..") or cleaned.endswith("!!") or cleaned.endswith("??"):
+            cleaned = cleaned[:-1]
+        return cleaned
+
     for raw in lines:
         line = raw.strip()
         upper = line.upper()
@@ -55,8 +64,8 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
             current_section = "takeaways"
             continue
 
-        # Clean bullets/numbers
-        cleaned = line
+        # Clean bullets/numbers and strip markdown emphasis
+        cleaned = _sanitize(line)
         if cleaned.startswith(("- ", "* ", "• ")):
             cleaned = cleaned[2:].strip()
         elif len(cleaned) > 2 and cleaned[0].isdigit() and cleaned[1:3] == ". ":
@@ -67,7 +76,8 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
 
     # Ensure all fields populated
     if not insights["keyInsights"]:
-        insights["keyInsights"] = synthesis_text.split(".")[0].strip() + "."
+        first = synthesis_text.split(".")[0].strip()
+        insights["keyInsights"] = _sanitize(first + ".")
     if not insights["observations"]:
         insights["observations"] = "Participants showed varied perspectives based on their backgrounds and experiences."
     if not insights["takeaways"]:
