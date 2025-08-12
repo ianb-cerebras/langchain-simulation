@@ -17,7 +17,7 @@ from langgraph.graph import StateGraph, END
 
 
 # Configuration Constants (kept from UXR.py)
-DEFAULT_NUM_INTERVIEWS = 11
+DEFAULT_NUM_INTERVIEWS = 10
 DEFAULT_NUM_QUESTIONS = 3
 
 
@@ -120,21 +120,23 @@ class Questions(BaseModel):
 
 
 question_gen_prompt = (
-    """Generate exactly {DEFAULT_NUM_QUESTIONS} interview questions about: {research_question}. """
+    """Generate exactly {num_questions} interview questions about: {research_question}. """
     """Use the provided structured output to format the questions."""
 )
 
 
 def configuration_node(state: InterviewState) -> Dict:
     print(f"\n🔧 Configuring research: {state['research_question']}")
+    planned_interviews = state.get("num_interviews", DEFAULT_NUM_INTERVIEWS)
+    planned_questions = state.get("num_questions", DEFAULT_NUM_QUESTIONS)
     print(
-        f"📊 Planning {DEFAULT_NUM_INTERVIEWS} interviews with {DEFAULT_NUM_QUESTIONS} questions each"
+        f"📊 Planning {planned_interviews} interviews with {planned_questions} questions each"
     )
 
     structured_llm = llm.with_structured_output(Questions)
     questions = structured_llm.invoke(
         question_gen_prompt.format(
-            DEFAULT_NUM_QUESTIONS=DEFAULT_NUM_QUESTIONS,
+            num_questions=planned_questions,
             research_question=state["research_question"],
         )
     )
@@ -152,8 +154,9 @@ def configuration_node(state: InterviewState) -> Dict:
         pass
 
     return {
-        "num_questions": DEFAULT_NUM_QUESTIONS,
-        "num_interviews": DEFAULT_NUM_INTERVIEWS,
+        # Preserve user-provided counts; only fall back to defaults if missing
+        "num_questions": planned_questions,
+        "num_interviews": planned_interviews,
         "interview_questions": questions,
         "timeline": timeline,
     }

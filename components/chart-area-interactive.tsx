@@ -13,7 +13,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import {
-  ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
@@ -146,19 +145,6 @@ const chartData = [
   { date: "2024-06-30", desktop: 446, mobile: 400 },
 ]
 
-const chartConfig = {
-  visitors: {
-    label: "Visitors",
-  },
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
-  },
-} satisfies ChartConfig
 
 export function ChartAreaInteractive({ simulationData }: ChartAreaInteractiveProps) {
   const isMobile = useIsMobile()
@@ -181,6 +167,8 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
   const chartDataToUse = React.useMemo(() => {
     if (simulationData && simulationData.all_interviews) {
       const bucketSizeSeconds = 5
+      const timeline = simulationData.timeline || []
+
       // Determine start/end from backend if available
       const startMs = (() => {
         const src = simulationData.start_time || simulationData.timestamp
@@ -197,17 +185,20 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
       const durationSec = Math.max(0, Math.ceil((endMs - startMs) / 1000)) || 1
       const bucketCount = Math.max(1, Math.ceil(durationSec / bucketSizeSeconds))
 
-      // Initialize buckets
-      const buckets = Array.from({ length: bucketCount }, (_, i) => ({
+      // Initialize time buckets
+      let buckets = Array.from({ length: bucketCount }, (_, i) => ({
         t: i * bucketSizeSeconds, // seconds from start
-        desktop: 0, // questions
-        mobile: 0, // interviews
+        desktop: 0, // questions answered
+        mobile: 0, // interviews completed
       }))
 
-      const timeline = simulationData.timeline || []
+      // Populate from timeline if timestamps are valid
+      let populated = false
       for (const ev of timeline) {
         const ts = new Date(ev.timestamp)
-        if (isNaN(ts.getTime())) continue
+        if (isNaN(ts.getTime())) {
+          continue
+        }
         const offsetSec = Math.max(0, Math.floor((ts.getTime() - startMs) / 1000))
         const idx = Math.min(
           buckets.length - 1,
@@ -215,21 +206,58 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
         )
         if (ev.type === "answer") {
           buckets[idx].desktop += 1
+          populated = true
         } else if (ev.type === "interview_completed") {
           buckets[idx].mobile += 1
+          populated = true
+        }
+      }
+
+      // Fallback: if timeline timestamps are invalid or window is too short (all in one bucket),
+      // render a sequence-based series so users still see progression.
+      const totalPoints = buckets.reduce((acc, b) => acc + b.desktop + b.mobile, 0)
+      if (!populated || bucketCount === 1 || totalPoints === 0) {
+        const syntheticEvents: Array<{ t: number; desktop: number; mobile: number }> = []
+
+        // Prefer real timeline ordering if provided; else synthesize from interviews
+        if (timeline.length > 0) {
+          let t = 0
+          for (const ev of timeline) {
+            t += 1
+            syntheticEvents.push({
+              t,
+              desktop: ev.type === "answer" ? 1 : 0,
+              mobile: ev.type === "interview_completed" ? 1 : 0,
+            })
+          }
+        } else if (simulationData.all_interviews?.length) {
+          let t = 0
+          for (const interview of simulationData.all_interviews) {
+            const responses = interview.responses || []
+            for (let i = 0; i < responses.length; i += 1) {
+              t += 1
+              syntheticEvents.push({ t, desktop: 1, mobile: 0 })
+            }
+            t += 1
+            syntheticEvents.push({ t, desktop: 0, mobile: 1 })
+          }
+        }
+
+        if (syntheticEvents.length > 0) {
+          buckets = syntheticEvents
         }
       }
 
       return buckets
     }
-    
+
     // Otherwise use the static chart data
-    return chartData;
-  }, [simulationData]);
+    return chartData
+  }, [simulationData])
 
   // Determine if current dataset is the simulation bucketed series (has 't')
   const isSimulationSeries = React.useMemo(() => {
-    const first = (chartDataToUse as any[])[0]
+    const first = (chartDataToUse as Array<Record<string, unknown>>)[0]
     return first && Object.prototype.hasOwnProperty.call(first, "t")
   }, [chartDataToUse])
 
