@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 import traceback
+import re
 from typing import Dict, List, Any, Union, Optional, Tuple
 from backend.uxr_logic import execute_research
 
@@ -46,31 +47,83 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
             cleaned = cleaned[:-1]
         return cleaned
 
+    def _detect_section_and_remainder(line: str) -> Tuple[Optional[str], Optional[str]]:
+        """Return (section_key, remainder_after_colon) if the line appears to start a section.
+        Supports multiple synonymous headings and inline content after a colon."""
+        stripped = line.strip()
+        if not stripped:
+            return None, None
+        upper = stripped.upper()
+
+        key_markers = [
+            "KEY THEMES",
+            "THEMES",
+            "KEY INSIGHTS",
+            "INSIGHTS",
+            "INSIGHT SUMMARY",
+        ]
+        obs_markers = [
+            "DIVERSE PERSPECTIVES",
+            "PERSPECTIVES",
+            "OBSERVATIONS",
+            "POINTS OF OBSERVATION",
+            "POINTS OF OBSERVATIONS",
+            "OBSERVATION POINTS",
+        ]
+        take_markers = [
+            "ACTIONABLE RECOMMENDATIONS",
+            "RECOMMENDATIONS",
+            "PAIN POINTS & OPPORTUNITIES",
+            "PAIN POINTS",
+            "OPPORTUNITIES",
+            "KEY TAKEAWAYS",
+            "TAKEAWAYS",
+            "BIG TAKEAWAYS",
+        ]
+
+        def find_match(markers: List[str]) -> bool:
+            return any(m in upper for m in markers)
+
+        section: Optional[str] = None
+        if find_match(key_markers):
+            section = "keyInsights"
+        elif find_match(obs_markers):
+            section = "observations"
+        elif find_match(take_markers):
+            section = "takeaways"
+
+        if section is None:
+            return None, None
+
+        # Capture inline content after a colon, if present
+        remainder: Optional[str] = None
+        if ":" in stripped:
+            remainder = stripped.split(":", 1)[1].strip()
+        return section, remainder
+
     for raw in lines:
         line = raw.strip()
-        upper = line.upper()
         if not line:
             continue
-        if "KEY THEMES" in upper or "THEMES" in upper:
+
+        # Detect section headers (with synonyms) and optionally capture inline content
+        detected_section, inline_remainder = _detect_section_and_remainder(line)
+        if detected_section:
             _commit()
-            current_section = "keyInsights"
-            continue
-        if "DIVERSE PERSPECTIVES" in upper or "PERSPECTIVES" in upper:
-            _commit()
-            current_section = "observations"
-            continue
-        if "ACTIONABLE RECOMMENDATIONS" in upper or "RECOMMENDATIONS" in upper or "PAIN POINTS" in upper:
-            _commit()
-            current_section = "takeaways"
+            current_section = detected_section
+            if inline_remainder:
+                cleaned_inline = _sanitize(inline_remainder)
+                # Remove common bullet/number prefixes like "1. ", "- ", "• ", "1) "
+                cleaned_inline = re.sub(r"^(?:[-*•]\s+|\d+[\.)]\s+)", "", cleaned_inline).strip()
+                if cleaned_inline:
+                    section_content.append(cleaned_inline)
             continue
 
-        # Clean bullets/numbers and strip markdown emphasis
+        # Clean bullets/numbers and strip markdown emphasis for regular content lines
         cleaned = _sanitize(line)
-        if cleaned.startswith(("- ", "* ", "• ")):
-            cleaned = cleaned[2:].strip()
-        elif len(cleaned) > 2 and cleaned[0].isdigit() and cleaned[1:3] == ". ":
-            cleaned = cleaned[3:].strip()
-        section_content.append(cleaned)
+        cleaned = re.sub(r"^(?:[-*•]\s+|\d+[\.)]\s+)", "", cleaned).strip()
+        if cleaned:
+            section_content.append(cleaned)
 
     _commit()
 

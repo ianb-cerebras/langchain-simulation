@@ -20,8 +20,10 @@ export function SectionCards({ insights }: SectionCardsProps) {
   function takeFirstSentences(text: string | undefined | null, limit: number = 3): string {
     const value = (text ?? "").toString().trim()
     if (!value) return ""
-    // Extract sentences keeping punctuation. Fallback to whole string if regex fails
-    const sentences = value.match(/[^.!?\n]+[.!?]+|[^.!?\n]+$/g) || [value]
+    // Remove leading section headings if present (tolerate formatting differences)
+    const withoutHeading = value.replace(/^[\s*]*\**\s*(key\s*(themes|insights)|diverse\s+perspectives|points?\s+of\s+observation|observations|pain\s*points(?:\s*&\s*opportunities)?|actionable\s*recommendations|big\s*takeaways|takeaways)\s*:\s*/i, "")
+    // Extract sentences keeping punctuation, treating semicolons and newlines as boundaries too
+    const sentences = withoutHeading.match(/[^.!?;\n]+[.!?;]+|[^.!?;\n]+$/g) || [withoutHeading]
     const clipped = sentences.slice(0, limit).join(" ").trim()
     return clipped
   }
