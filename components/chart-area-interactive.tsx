@@ -166,7 +166,7 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
   // Generate chart data from simulation or use static demo data
   const chartDataToUse = React.useMemo(() => {
     if (simulationData && simulationData.all_interviews) {
-      const bucketSizeSeconds = 5
+      const bucketSizeSeconds = 1
       const timeline = simulationData.timeline || []
 
       // Determine start/end from backend if available
@@ -382,24 +382,7 @@ export function ChartAreaInteractive({ simulationData }: ChartAreaInteractivePro
             />
             <ChartTooltip
               cursor={false}
-              content={
-                <ChartTooltipContent
-                  labelFormatter={(value) => {
-                    if (isSimulationSeries) {
-                      return `t+${formatSeconds(Number(value))}`
-                    }
-                    const d = new Date(value)
-                    if (isNaN(d.getTime())) {
-                      return String(value)
-                    }
-                    return d.toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    })
-                  }}
-                  indicator="dot"
-                />
-              }
+              content={<ChartTooltipContent hideLabel indicator="dot" />}
             />
             <Area
               dataKey="mobile"

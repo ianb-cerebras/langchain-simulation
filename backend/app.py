@@ -32,12 +32,14 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
     def _commit():
         nonlocal section_content, current_section
         if current_section and section_content:
-            first_two = ". ".join([s for s in section_content if s][:2]).strip()
-            if first_two and not first_two.endswith("."):
-                first_two += "."
+            # Take first 2-3 sentences from the section content
+            sentences_to_take = section_content[:3] if len(section_content) >= 3 else section_content[:2] if len(section_content) >= 2 else section_content
+            combined = ". ".join(sentences_to_take).strip()
+            if combined and not combined.endswith("."):
+                combined += "."
             # Only set the section once to avoid accidental overwrites/doubling
             if not insights.get(current_section):
-                insights[current_section] = first_two
+                insights[current_section] = combined
         section_content = []
 
     def _sanitize(text: str) -> str:
@@ -125,11 +127,13 @@ def _extract_insights_from_synthesis(synthesis_text: str, research_question: str
                     section_content.append(cleaned_inline)
             continue
 
-        # Clean bullets/numbers and strip markdown emphasis for regular content lines
-        cleaned = _sanitize(line)
-        cleaned = re.sub(r"^(?:[-*•]\s+|\d+[\.)]\s+)", "", cleaned).strip()
-        if cleaned:
-            section_content.append(cleaned)
+        # If we have a current section, add content to it
+        if current_section:
+            # Clean bullets/numbers and strip markdown emphasis for regular content lines
+            cleaned = _sanitize(line)
+            cleaned = re.sub(r"^(?:[-*•]\s+|\d+[\.)]\s+)", "", cleaned).strip()
+            if cleaned:
+                section_content.append(cleaned)
 
     _commit()
 
