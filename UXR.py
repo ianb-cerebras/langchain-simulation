@@ -42,7 +42,7 @@ from langgraph.graph import StateGraph, END
 DEFAULT_NUM_INTERVIEWS = 10
 DEFAULT_NUM_QUESTIONS = 5
 
-os.environ["CEREBRAS_API_KEY"]="REMOVED"
+os.environ["CEREBRAS_API_KEY"]="YOUR_API_KEY"
 os.environ["LANGCHAIN_TRACING_V2"] = "false"  # Disable LangSmith tracing
 
 import os, getpass
